@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://aayushsth.com.np",
+  "homepage": "https://www.aayushsth.com.np",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
@@ -10,7 +10,7 @@
     "@testing-library/user-event": "^13.5.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -40,6 +40,7 @@
     ]
   },
   "devDependencies": {
+    "eslint-config-react-app": "^7.0.1",
     "gh-pages": "^6.3.0"
   }
 }
