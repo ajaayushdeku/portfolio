@@ -8,7 +8,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <>
+    <section className="skills-info-container">
       <h2>Projects</h2>
       <div className="projects-grid">
         {projects.map((project) => (
@@ -19,7 +19,7 @@ const Projects = () => {
           </div>
         ))}
       </div>
-    </>
+    </section>
   );
 };
 

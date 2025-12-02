@@ -2,7 +2,7 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <>
+    <section className="skills-info-container">
       <h2>Contact</h2>
       <p>Feel free to reach out through email or the form below.</p>
       <form>
@@ -11,7 +11,7 @@ const Contact = () => {
         <textarea placeholder="Your Message" rows="4"></textarea>
         <button type="submit">Send Message</button>
       </form>
-    </>
+    </section>
   );
 };
 
