@@ -34,20 +34,15 @@ const Navbar = () => {
 
         {/* NAV LINKS */}
         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-          {[
-            "home",
-            "about",
-            "skills",
-            "Achievements",
-            "projects",
-            "contact",
-          ].map((item) => (
-            <li key={item} onClick={() => setMenuOpen(false)}>
-              <a href={`#${item}`}>
-                {item.charAt(0).toUpperCase() + item.slice(1)}
-              </a>
-            </li>
-          ))}
+          {["home", "skills", "Achievements", "projects", "contact"].map(
+            (item) => (
+              <li key={item} onClick={() => setMenuOpen(false)}>
+                <a href={`#${item}`}>
+                  {item.charAt(0).toUpperCase() + item.slice(1)}
+                </a>
+              </li>
+            )
+          )}
         </ul>
 
         {/* THEME TOGGLE */}
