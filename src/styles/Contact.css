@@ -1,0 +1,176 @@
+/* ================== CONTACT ================== */
+.contact-section {
+  /* max-width: 900px; */
+  max-width: 90%;
+  margin: auto;
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.contact-section h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.contact-section p {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Container for 2-column layout */
+.contact-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 2rem 4rem;
+}
+
+/* Left Column */
+.contact-left {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.contact-left h3 {
+  position: absolute;
+  top: 1rem;
+}
+
+/* Right Column */
+.contact-right {
+  flex: 1;
+  min-width: 250px;
+}
+
+/* Tabs */
+.contact-tabs {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.contact-tabs button {
+  padding: 0.8rem 3rem;
+  border: 1px solid #1e90ff;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.contact-tabs button .icon {
+  color: #007bff;
+}
+
+.contact-tabs button.active,
+.contact-tabs button:hover {
+  background-color: var(--button-active-bg);
+  color: white;
+  border-color: var(--button-bg);
+}
+
+.contact-tabs button .icon.active,
+.contact-tabs button .icon:hover {
+  color: white;
+}
+
+/* Tab Content */
+.contact-info {
+  width: 100%;
+  border-radius: 10px;
+  font-size: 1rem;
+  margin-top: 1rem;
+  padding: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  box-shadow: 0 2px 8px var(--box-shadow);
+}
+
+/* Form Styling */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background: var(--card-bg);
+  box-shadow: 0 2px 8px var(--box-shadow);
+  border-radius: 10px;
+  padding: 3rem 3rem;
+}
+
+.contact-form .form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.contact-form .form-row input {
+  flex: 1;
+  padding: 1.5rem 2rem;
+  border-radius: 6px;
+  border: 1px solid #b7b7b7;
+  background-color: var(--input-field-bg);
+  color: var(--text-color);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--button-bg);
+  outline: none;
+}
+
+.contact-form textarea {
+  padding: 1.5rem 2rem;
+  border-radius: 6px;
+  border: 1px solid #b7b7b7;
+  background-color: var(--input-field-bg);
+  color: var(--text-color);
+  resize: vertical;
+}
+
+.contact-form button {
+  padding: 15px 20px;
+  background-color: var(--button-bg);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: var(--button-hover);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .contact-tabs {
+    justify-content: center;
+  }
+}
