@@ -7,6 +7,7 @@ import { AiFillHome, AiOutlineProject } from "react-icons/ai";
 import { FaUserGraduate, FaTools, FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdContacts } from "react-icons/md";
 import logo from "../asset/logo.png";
+import hi from "../asset/hi.gif";
 
 const Navbar = () => {
   const [theme, setTheme] = useState("light");
@@ -57,7 +58,11 @@ const Navbar = () => {
         {/* Left Section: Logo */}
         <div className="nav-left">
           <img src={logo} alt="Portfolio Logo" className="nav-logo" />
-          <p className="nav-welcome">Welcome</p>
+
+          <p className="nav-welcome">
+            Welcome <img src={hi} className="welcome-logo" />
+          </p>
+
           {/* Hamburger Button for Mobile */}
           <button
             className="hamburger-btn"
@@ -95,7 +100,7 @@ const Navbar = () => {
             <FaGithub />
           </a>
           <a
-            href="https://www.linkedin.com/in/ajaayushdeku/"
+            href="https://www.linkedin.com/in/aj-aayush-shrestha/"
             target="_blank"
             rel="noopener noreferrer"
             className="nav-right-icon"

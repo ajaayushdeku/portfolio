@@ -79,6 +79,19 @@ nav {
   left: 1rem;
   border-radius: 50%;
   background-color: #1a1a1a;
+  border: 2px solid var(--text-color);
+}
+
+.nav-welcome {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.welcome-logo {
+  width: 1.5rem;
+  height: auto;
+  padding: 0rem 0rem;
+  border-radius: 50%;
 }
 
 nav .nav-container {
@@ -95,6 +108,7 @@ nav .nav-links {
   list-style: none;
   display: flex;
   gap: 20px;
+  transition: all 0.3s;
 }
 
 /* Icon-only nav links */
@@ -208,6 +222,7 @@ nav .nav-container .theme-toggle-button:hover div {
   border: none;
   cursor: pointer;
   color: var(--text-color);
+  transition: all 0.3s;
 }
 
 /* ================== SECTIONS ================== */
@@ -440,8 +455,9 @@ section {
   color: var(--text-color);
   transition: all 0.3s;
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  flex-direction: row;
+
+  gap: 3rem;
 }
 
 .skill-card:hover {
@@ -569,6 +585,11 @@ footer {
 
   .nav-welcome {
     display: none;
+  }
+
+  .nav-right {
+    border-left: 2px solid rgba(255, 255, 255, 0);
+    padding-left: 2rem;
   }
 
   .nav-links {

@@ -15,7 +15,7 @@
 /* grid layout */
 .achievements-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 25px;
 }
 
@@ -68,6 +68,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .ach-tag {
@@ -83,4 +85,75 @@
   font-size: 0.85rem;
   color: var(--text-color);
   opacity: 0.7;
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 1024px) {
+  .achievements-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .achievements-container {
+    padding: 3rem 1.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .achievement-img {
+    height: 160px;
+  }
+
+  .achievement-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .achievement-content p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .achievements-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .achievements-container {
+    padding: 2rem 1rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .achievement-img {
+    height: 140px;
+  }
+
+  .achievement-content h3 {
+    font-size: 1rem;
+  }
+
+  .achievement-content p {
+    font-size: 0.85rem;
+  }
+
+  .achievement-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .ach-tag {
+    font-size: 0.75rem;
+  }
+
+  .ach-date {
+    font-size: 0.8rem;
+  }
 }

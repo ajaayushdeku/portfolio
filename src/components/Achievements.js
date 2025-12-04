@@ -4,25 +4,18 @@ import "../styles/Achievements.css";
 
 const achievements = [
   {
-    title: "Hackathon Winner",
-    desc: "Won 1st place in a national-level hackathon by building an AI-powered solution.",
+    title: "GCES IT Expo Showcase",
+    desc: "Showcased a collection of games and interactive projects developed using Unity and other technologies.",
     date: "Dec 2024",
     image: award1,
-    tag: "AI / ML",
+    tag: "Game Development",
   },
   {
-    title: "Top Performer – Web Dev",
-    desc: "Recognized for outstanding performance in modern frontend development.",
-    date: "Aug 2023",
+    title: "Top GPA (4.0) Award",
+    desc: "Achieved a GPA of 4.0 in the 4th semester, with outstanding academic performance across multiple semesters (CGPA: 3.8).",
+    date: "Aug 2024",
     image: award1,
-    tag: "Frontend",
-  },
-  {
-    title: "Game Design Showcase",
-    desc: "My 2D indie game was featured in the Pokhara Game Expo.",
-    date: "Jan 2025",
-    image: award1,
-    tag: "Game Dev",
+    tag: "Academics",
   },
 ];
 
