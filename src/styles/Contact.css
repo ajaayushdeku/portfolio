@@ -32,8 +32,6 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 25px;
   align-items: flex-start;
 }
@@ -190,20 +188,22 @@
     align-items: center;
   }
 
-  .contact-item {
-    flex-direction: row;
-    justify-content: center;
-    text-align: center;
+  .contact-left p {
+    font-size: 0.8rem;
+    margin: 0 auto;
   }
-
   .contact-item div {
     display: flex;
     flex-direction: column;
-    align-items: center;
+  }
+
+  .contact-item p {
+    font-size: 0.8rem;
   }
 
   .contact-form {
     padding: 1.5rem;
+    width: 95%;
   }
 }
 

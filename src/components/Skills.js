@@ -27,6 +27,10 @@ const skills = [
     img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
   },
   {
+    name: "Unity",
+    img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg",
+  },
+  {
     name: "Blender",
     img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg",
   },

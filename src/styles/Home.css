@@ -268,11 +268,11 @@ section {
 
 .status-tag {
   display: inline-block;
-  border: 2px solid black;
+  border: 2px solid var(--text-color);
   border-radius: 20px;
   padding: 0.3rem 1rem;
-  background: black;
-  color: white;
+  background: var(--theme-toggle-btn-bg);
+  color: var(--theme-toggle-text);
   width: fit-content;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -456,7 +456,6 @@ section {
   transition: all 0.3s;
   display: flex;
   flex-direction: row;
-
   gap: 3rem;
 }
 
@@ -571,6 +570,44 @@ footer {
 }
 
 /* ========== MOBILE RESPONSIVE ========== */
+@media (max-width: 1200px) {
+  .hamburger-btn {
+    display: block;
+  }
+
+  .nav-logo {
+    top: 0.2rem;
+    width: 3rem;
+
+    left: 4rem;
+  }
+
+  .nav-welcome {
+    display: none;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 40%;
+    height: 100vh;
+
+    background: var(--navbar-bg);
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+    gap: 1.5rem;
+
+    transform: translateX(100%);
+    transition: 0.3s ease-in-out;
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+  }
+}
+
 @media (max-width: 768px) {
   .hamburger-btn {
     display: block;
