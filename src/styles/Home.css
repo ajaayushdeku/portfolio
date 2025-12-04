@@ -9,11 +9,13 @@
   --theme-toggle-btn-bg: #333333;
   --section-bg: #ffffff;
   --card-bg: #fafafa;
-  --link-color: #007bff;
+  --link-color: #6194cb;
+  --submit-button: #6194cb;
+  --submit-button-hover: #007bff00;
   --button-bg: #007bff00;
   --button-active-bg: #2569ae;
   --button-hover: #ffffff00;
-  --button-border: #188cbe;
+  --button-border: #6194cb;
   --navbar-bg: #ffffff;
   --input-field-bg: #ffffff;
   --footer-bg: #333333;
@@ -31,10 +33,12 @@
   --theme-toggle-btn-bg: #ffffff;
   --section-bg: #1a1a1a;
   --card-bg: #1e1e1e;
-  --link-color: #188cbe;
+  --link-color: #6194cb;
+  --submit-button: #6194cb;
+  --submit-button-hover: #007bff00;
   --button-bg: #5d94cc00;
   --button-hover: #ffffff00;
-  --button-border: #188cbe;
+  --button-border: #6194cb;
   --navbar-bg: #1e1e1e;
   --footer-bg: #1a1a1a;
   --input-field-bg: #1e1e1e;
@@ -308,9 +312,9 @@ section {
 .about-cv {
   display: inline-block;
   padding: 12px 30px;
-  background-color: var(--button-bg);
+  background-color: var(--submit-button);
   border: 2px solid var(--button-border);
-  color: var(--text-color);
+  color: white;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
@@ -553,7 +557,7 @@ section {
 .project-card .tags span,
 .project-tags span {
   background: #d0f5f5;
-  color: #1e90ff;
+  color: #6194cb;
   font-size: 0.8rem;
   padding: 4px 12px;
   border-radius: 12px;
