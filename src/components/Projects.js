@@ -1,5 +1,5 @@
 import React from "react";
-import sampleImg from "../asset/extra-logo.png"; // add your image here
+import sampleImg from "../asset/mount-glasses.jpg"; // add your image here
 
 const projects = [
   { name: "Project 1", desc: "Short description", link: "#", img: sampleImg },

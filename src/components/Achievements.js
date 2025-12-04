@@ -1,5 +1,5 @@
 import React from "react";
-import award1 from "../asset/extra-logo.png";
+import award1 from "../asset/mount-glasses.jpg";
 import "../styles/Achievements.css";
 
 const achievements = [
@@ -29,7 +29,7 @@ const achievements = [
 const Achievements = () => {
   return (
     <section id="achievements" className="achievements-container">
-      <h2 className="section-title">Achievements</h2>
+      <h2 className="component-heading">Achievements</h2>
 
       <div className="achievements-grid">
         {achievements.map((ach, index) => (

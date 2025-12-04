@@ -10,9 +10,10 @@
   --section-bg: #ffffff;
   --card-bg: #fafafa;
   --link-color: #007bff;
-  --button-bg: #007bff;
+  --button-bg: #007bff00;
   --button-active-bg: #2569ae;
-  --button-hover: #0056b3;
+  --button-hover: #ffffff00;
+  --button-border: #188cbe;
   --navbar-bg: #ffffff;
   --input-field-bg: #ffffff;
   --footer-bg: #333333;
@@ -30,9 +31,10 @@
   --theme-toggle-btn-bg: #ffffff;
   --section-bg: #1a1a1a;
   --card-bg: #1e1e1e;
-  --link-color: #1e90ff;
-  --button-bg: #1e90ff;
-  --button-hover: #0f5bb5;
+  --link-color: #188cbe;
+  --button-bg: #5d94cc00;
+  --button-hover: #ffffff00;
+  --button-border: #188cbe;
   --navbar-bg: #1e1e1e;
   --footer-bg: #1a1a1a;
   --input-field-bg: #1e1e1e;
@@ -86,6 +88,7 @@ nav .nav-container {
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
+  gap: 1rem;
 }
 
 nav .nav-links {
@@ -94,15 +97,81 @@ nav .nav-links {
   gap: 20px;
 }
 
+/* Icon-only nav links */
 nav .nav-links li a {
   text-decoration: none;
   color: var(--text-color);
   font-weight: 500;
-  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 9rem;
+  position: relative;
 }
 
-nav .nav-links li a:hover {
+/* Icon */
+.nav-icon {
+  font-size: 1.3rem;
+  transition: transform 0.3s, color 0.3s;
+}
+
+/* Text hidden by default */
+.nav-text {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Show text on hover */
+nav .nav-links li a:hover .nav-text {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+/* Change icon color on hover */
+nav .nav-links li a:hover .nav-icon {
   color: var(--link-color);
+  transform: scale(1.1);
+}
+
+/* Active state: text always visible */
+nav .nav-links li a.active .nav-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+nav .nav-links li a.active .nav-icon {
+  color: var(--link-color);
+}
+
+/* Right side section */
+.nav-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  border-left: 2px solid rgb(156, 156, 156);
+  padding-left: 2rem;
+  position: absolute;
+  right: 1rem;
+}
+
+/* Style icons on right */
+.nav-right-icon {
+  position: relative;
+  top: 0.1rem;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  transition: all 0.3s;
+}
+
+.nav-right-icon:hover {
+  color: var(--link-color);
+  transform: scale(1.1);
 }
 
 nav .nav-container .theme-toggle-button {
@@ -110,20 +179,26 @@ nav .nav-container .theme-toggle-button {
   border: none;
   cursor: pointer;
   color: var(--theme-toggle-text);
-  font-size: 1.1rem;
-  transition: color 0.3s;
-  margin-left: 20px;
   padding: 6px 12px;
   border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  position: absolute;
-  right: 1rem;
+  transition: all 0.3s;
+}
 
-  display: flex;
-  gap: 0.5rem;
-  justify-content: center;
-  align-items: center;
+nav .nav-container .theme-toggle-button:hover {
+  transform: scale(1.1);
+  background-color: var(--theme-toggle-text);
+  color: var(--theme-toggle-btn-bg);
+  box-shadow: 0 5px var(--theme-toggle-btn-bg);
+}
+
+/* If you want to rotate the icon on hover */
+nav .nav-container .theme-toggle-button div {
+  margin-top: 0.3rem;
+  transition: all 0.3s;
+}
+
+nav .nav-container .theme-toggle-button:hover div {
+  transform: scale(1.2);
 }
 
 /* Hide hamburger on desktop */
@@ -148,32 +223,32 @@ section {
 /* ================== HERO + ABOUT ================== */
 #home-about {
   width: 100%;
-  min-height: 100vh;
+  min-height: 95vh;
   background-color: var(--section-bg);
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 50px 20px;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .hero-about-container {
   display: flex;
-  gap: 50px;
+  gap: 80px;
   flex-wrap: wrap;
   width: 100%;
   max-width: 1200px;
   align-items: center;
 }
 
-/* Left Column: Hero + About */
+/* Left Column */
 .hero-about-left {
   flex: 1;
   min-width: 300px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 25px;
 }
 
 .status-tag {
@@ -184,81 +259,103 @@ section {
   background: black;
   color: white;
   width: fit-content;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .hero-about-left h1 {
   font-size: 3rem;
   margin: 0;
   color: var(--text-color);
+  line-height: 1.2;
 }
 
 .hero-about-left h1 span {
   color: var(--link-color);
+  font-weight: 700;
 }
 
 .hero-about-description {
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 1.8;
   color: var(--text-color);
+  opacity: 0.9;
 }
 
-.about-cta {
+/* Buttons */
+.about-btns {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.about-cta,
+.about-cv {
   display: inline-block;
-  padding: 12px 25px;
+  padding: 12px 30px;
   background-color: var(--button-bg);
-  color: white;
-  border-radius: 6px;
+  border: 2px solid var(--button-border);
+  color: var(--text-color);
+  border-radius: 50px;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   transition: all 0.3s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.about-cta:hover {
+.about-cta:hover,
+.about-cv:hover {
   background-color: var(--button-hover);
+  color: var(--text-color);
+  transform: translateY(-3px);
 }
 
-/* Right Column: Image / Video */
+/* Right Column: Image */
 .hero-about-right {
   flex: 1;
   min-width: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 
-.hero-about-image,
-.hero-video {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 20px;
-  object-fit: cover;
+.hero-image-container {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  overflow: hidden;
+  /* border: 5px solid var(--link-color); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* If using video as background */
-.hero-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+.hero-about-image {
+  width: auto;
   height: 100%;
   object-fit: cover;
-  z-index: -1;
-  border-radius: 20px;
+  transition: all 0.3s;
+}
+
+.hero-about-right:hover .hero-about-image {
+  transform: scale(1.05);
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
-  .hero-about-container {
-    gap: 30px;
-  }
-}
-
 @media (max-width: 768px) {
   .hero-about-container {
     flex-direction: column;
-    gap: 30px;
+    gap: 40px;
+  }
+
+  /* Reverse order on small screens */
+  .hero-about-left {
+    order: 2;
+  }
+
+  .hero-about-right {
+    order: 1;
   }
 
   .hero-about-left h1 {
@@ -269,9 +366,15 @@ section {
     font-size: 1rem;
   }
 
-  .hero-about-image,
-  .hero-video {
-    max-width: 100%;
+  .hero-image-container {
+    width: 250px;
+    height: 250px;
+  }
+
+  .about-cta,
+  .about-cv {
+    padding: 10px 20px;
+    font-size: 0.95rem;
   }
 }
 
@@ -284,9 +387,9 @@ section {
     font-size: 0.95rem;
   }
 
-  .about-cta {
-    padding: 10px 18px;
-    font-size: 0.95rem;
+  .hero-image-container {
+    width: 200px;
+    height: 200px;
   }
 }
 
