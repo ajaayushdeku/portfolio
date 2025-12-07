@@ -14,7 +14,7 @@ const projects = [
   {
     name: "Dodge Block",
     desc: "Dodge Block is a 3D single-player game built with Unity. Players control a car and must avoid falling blocks and obstacles to survive longer and achieve higher scores.",
-    pdf: "#",
+    pdf: "/pdf/MerchVault.pdf",
     img: [sampleImg2, sampleImg, sampleImg],
     tags: ["C#", "Unity3D", "Blender"],
   },
