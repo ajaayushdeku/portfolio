@@ -57,7 +57,7 @@ const Navbar = () => {
       <div className="nav-container">
         {/* Left Section: Logo */}
         <div className="nav-left">
-          <img src={logo} alt="Portfolio Logo" className="nav-logo" />
+          {/* <img src={logo} alt="Portfolio Logo" className="nav-logo" /> */}
 
           <p className="nav-welcome">
             Welcome <img src={hi} className="welcome-logo" />
@@ -91,23 +91,6 @@ const Navbar = () => {
 
         {/* Right Section: Theme + GitHub + LinkedIn */}
         <div className="nav-right">
-          <a
-            href="https://github.com/ajaayushdeku?tab=repositories"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="nav-right-icon"
-          >
-            <FaGithub />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/aj-aayush-shrestha/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="nav-right-icon"
-          >
-            <FaLinkedin />
-          </a>
-
           <button onClick={toggleTheme} className="theme-toggle-button">
             <div>
               {" "}
