@@ -1,6 +1,20 @@
 import React, { useEffect, useState } from "react";
 import sampleImg from "../asset/mount-glasses.jpg"; // add your image here
 import sampleImg2 from "../asset/face.jpeg"; // add your image here
+
+import dodgeBlock1 from "../asset/DodgeBlock_Home.png";
+import dodgeBlock2 from "../asset/DodgeBlock_HowToPlay.png";
+import dodgeBlock3 from "../asset/DodgeBlock_GamePlay.png";
+import dodgeBlock4 from "../asset/DodgeBlock_ResultScreen.png";
+
+import merchVault1 from "../asset/MerchVault_Home.jpg";
+import merchVault2 from "../asset/MerchVault_Customize.jpg";
+import merchVault3 from "../asset/MerchVault_Artist.jpg";
+import merchVault4 from "../asset/MerchVault_ProductPage.jpg";
+
+import visuoFind1 from "../asset/VisuoFind_Home.png";
+import visuoFind2 from "../asset/VisuoFind_SearchBox.png";
+import visuoFind3 from "../asset/VisuoFind_ViewResult.png";
 import "../styles/Projects.css";
 
 const projects = [
@@ -15,21 +29,21 @@ const projects = [
     name: "Dodge Block",
     desc: "Dodge Block is a 3D single-player game built with Unity. Players control a car and must avoid falling blocks and obstacles to survive longer and achieve higher scores.",
     pdf: "/pdf/MerchVault.pdf",
-    img: [sampleImg2, sampleImg, sampleImg],
+    img: [dodgeBlock1, dodgeBlock2, dodgeBlock3, dodgeBlock4],
     tags: ["C#", "Unity3D", "Blender"],
   },
   {
     name: "MerchVault",
     desc: "MerchVault is an e-commerce platform for selling apparel such as t-shirts, hoodies, posters, and more. Users can customize products with graphics or text, and creators can upload and sell their own designs on the marketplace.",
     pdf: "/pdf/MerchVault.pdf",
-    img: [sampleImg, sampleImg, sampleImg],
+    img: [merchVault1, merchVault2, merchVault3, merchVault4],
     tags: ["HTML", "CSS", "React.js", "Node.js", "MongoDB"],
   },
   {
     name: "VisuoFind",
     desc: "VisuoFind is an AI-powered product search application that finds look-alike apparel from images. Users can upload a picture of an item—such as shoes, t-shirts, watches, etc.—and the system identifies visually similar products and displays accurate matches.",
     pdf: "/pdf/VisuoFind.pdf",
-    img: [sampleImg, sampleImg, sampleImg],
+    img: [visuoFind1, visuoFind2, visuoFind3],
     tags: ["HTML", "CSS", "React.js", "Python", "Spring Boot", "PostgreSQL"],
   },
 ];
@@ -143,17 +157,21 @@ const Projects = () => {
           <div key={project.name} className="project-card">
             {/* Project Image */}
             <div className="project-img-container">
-              <img
-                src={project.img[imageIndices[project.name]]}
-                alt={project.name}
-              />
+              {project.img.map((img, idx) => (
+                <img
+                  key={idx}
+                  src={img}
+                  alt={project.name}
+                  className={idx === imageIndices[project.name] ? "active" : ""}
+                />
+              ))}
               <h2 className="img-text">
                 {project.name}
                 <button
                   className="project-btn"
                   onClick={() => window.open(project.pdf, "_blank")}
                 >
-                  View Project →
+                  View Project Report →
                 </button>
               </h2>
             </div>

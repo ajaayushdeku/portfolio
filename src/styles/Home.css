@@ -89,6 +89,10 @@ nav {
 .nav-welcome {
   display: flex;
   gap: 0.5rem;
+  position: absolute;
+  font-weight: 600;
+  top: 1rem;
+  left: 1rem;
 }
 
 .welcome-logo {
@@ -105,7 +109,6 @@ nav .nav-container {
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
-  gap: 1rem;
 }
 
 nav .nav-links {
@@ -451,7 +454,14 @@ section {
 
 .skill-card:hover {
   transform: scale(1.03);
-  border: 1px solid #6bb5ff;
+}
+
+.skill-card img {
+  transition: all 0.3s;
+}
+
+.skill-card:hover img {
+  transform: translateX(10px) scale(1.2);
 }
 
 .skill-card p {
@@ -590,5 +600,21 @@ footer {
 
   .project-card .tags {
     bottom: 0.8rem;
+  }
+
+  footer {
+    text-align: center;
+    padding: 10px 0;
+    gap: 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  /* Style icons on right */
+  .footer-right-icon {
+    position: relative;
+    top: 0.1rem;
+    font-size: 1rem;
+    color: white;
+    transition: all 0.3s;
   }
 }
