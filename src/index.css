@@ -1,17 +1,29 @@
-body {
-  margin: 0;
-  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif; */
-  font-family: "Patrick Hand", cursive;
-  font-weight: 400;
+/* @font-face {
+  font-family: "Bitcount Prop Single";
+  font-optical-sizing: auto;
+  font-weight: 200 300;
+  font-style: normal;
+  font-variation-settings: "slnt" 0, "CRSV" 0.5, "ELSH" 0, "ELXP" 0;
+  src: url("./asset/font/BitcountPropSingle-VariableFont_CRSV,ELSH,ELXP,slnt,wght.ttf")
+    format("truetype");
+} */
+
+@font-face {
+  font-family: "Bitcount Prop Single";
+  font-weight: 100;
   font-style: normal;
 
+  src: url("./asset/font/Audiowide-Regular.ttf");
+}
+
+/* Apply globally */
+body {
+  font-family: "Bitcount Prop Single";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
+} */

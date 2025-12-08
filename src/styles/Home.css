@@ -3,41 +3,40 @@
 /* ================== LIGHT THEME ================== */
 :root {
   /* Main brand colors */
-  --bg-color: #ebe4ba;
-  --section-bg: #f5efcf;
-  --card-bg: #f9f4da;
+  --bg-color: #f7f7f7; /* light greyish-white for overall background */
+  --section-bg: #ffffff; /* clean white for sections */
+  --card-bg: #f2f2f245; /* subtle grey for cards */
 
   /* Text colors */
   --text-color: #2d2c24;
   --info-text-color: #6b623f;
   --placeholder-color: #8b815a;
-  --accent-color: #6d7d33;
+  --accent-color: #6194cb;
 
   /* Main accents */
-  --link-color: #1b2e45;
-  --accent-color: #1b2e45;
+  --link-color: #6194cb;
   --accent-color-2: #c97f59;
-  --box-shadow: rgba(0, 0, 0, 0.15);
+  --box-shadow: rgba(0, 0, 0, 0.1);
 
   /* Buttons */
-  --submit-button: #1b2e45;
-  --submit-button-hover: #254467;
+  --submit-button: #6194cb;
+  --submit-button-hover: #6194cbba;
   --button-bg: transparent;
   --button-active-bg: #6d7d33;
-  --button-border: #1b2e45;
+  --button-border: #6194cb;
   --button-hover: rgba(0, 0, 0, 0.05);
 
   /* Navbar + Footer */
-  --navbar-bg: #ebe4ba;
+  --navbar-bg: linear-gradient(90deg, #ffffff, #f7f7f7);
   --footer-bg: #2d2c24;
   --footer-text-color: #ffffff;
 
   /* Theme toggle */
-  --theme-toggle-text: #f5efcf;
-  --theme-toggle-btn-bg: #1b2e45;
+  --theme-toggle-text: #222222;
+  --theme-toggle-btn-bg: #f7f7f7;
 
   /* Input fields */
-  --input-field-bg: #ebe4ba10;
+  --input-field-bg: #ffffff;
 }
 
 /* ================== DARK THEME ================== */
@@ -79,10 +78,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Bitcount Prop Single", system-ui;
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   scroll-behavior: smooth;
   background-color: var(--bg-color);
@@ -328,7 +327,6 @@ section {
   display: inline-block;
   padding: 12px 30px;
   background-color: var(--submit-button);
-  border: 2px solid var(--button-border);
   color: white;
   border-radius: 50px;
   text-decoration: none;
@@ -340,7 +338,7 @@ section {
 .about-cta:hover,
 .about-cv:hover {
   background-color: var(--button-hover);
-  color: var(--text-color);
+  color: var(--submit-button);
   transform: translateY(-3px);
 }
 

@@ -57,7 +57,7 @@ const Navbar = () => {
       <div className="nav-container">
         {/* Left Section: Logo */}
         <div className="nav-left">
-          <img src={logo} alt="Portfolio Logo" className="nav-logo" />
+          {/* <img src={logo} alt="Portfolio Logo" className="nav-logo" /> */}
 
           {/* Hamburger Button for Mobile */}
           <button
