@@ -1,49 +1,76 @@
 /* ================== VARIABLES ================== */
 
-/* Default Light Theme */
+/* ================== LIGHT THEME ================== */
 :root {
-  --bg-color: #f5f5f5;
-  --text-color: #2b3d4f;
-  --info-text-color: #7e8b8c;
-  --theme-toggle-text: #ffffff;
-  --theme-toggle-btn-bg: #333333;
-  --section-bg: #ffffff;
-  --card-bg: #fafafa;
-  --link-color: #6194cb;
-  --submit-button: #6194cb;
-  --submit-button-hover: #007bff00;
-  --button-bg: #007bff00;
-  --button-active-bg: #2569ae;
-  --button-hover: #ffffff00;
-  --button-border: #6194cb;
-  --navbar-bg: #ffffff;
-  --input-field-bg: #ffffff;
-  --footer-bg: #333333;
+  /* Main brand colors */
+  --bg-color: #ebe4ba;
+  --section-bg: #f5efcf;
+  --card-bg: #f9f4da;
+
+  /* Text colors */
+  --text-color: #2d2c24;
+  --info-text-color: #6b623f;
+  --placeholder-color: #8b815a;
+  --accent-color: #6d7d33;
+
+  /* Main accents */
+  --link-color: #1b2e45;
+  --accent-color: #1b2e45;
+  --accent-color-2: #c97f59;
+  --box-shadow: rgba(0, 0, 0, 0.15);
+
+  /* Buttons */
+  --submit-button: #1b2e45;
+  --submit-button-hover: #254467;
+  --button-bg: transparent;
+  --button-active-bg: #6d7d33;
+  --button-border: #1b2e45;
+  --button-hover: rgba(0, 0, 0, 0.05);
+
+  /* Navbar + Footer */
+  --navbar-bg: #ebe4ba;
+  --footer-bg: #2d2c24;
   --footer-text-color: #ffffff;
-  --placeholder-color: #666666;
-  --box-shadow: rgba(0, 0, 0, 0.1);
+
+  /* Theme toggle */
+  --theme-toggle-text: #f5efcf;
+  --theme-toggle-btn-bg: #1b2e45;
+
+  /* Input fields */
+  --input-field-bg: #ebe4ba10;
 }
 
-/* Dark Theme */
+/* ================== DARK THEME ================== */
 [data-theme="dark"] {
-  --bg-color: #242424;
-  --text-color: #e0e0e0;
-  --info-text-color: #7e8b8c;
-  --theme-toggle-text: #121212;
-  --theme-toggle-btn-bg: #ffffff;
-  --section-bg: #1a1a1a;
-  --card-bg: #1e1e1e;
+  --bg-color: #1c1c1c;
+  --section-bg: #242424;
+  --card-bg: #2a2a2a;
+
+  --text-color: #e6e6e6;
+  --info-text-color: #b5b5b5;
+  --placeholder-color: #888888;
+
+  /* accents keep same theme identity */
   --link-color: #6194cb;
+  --accent-color: #6194cb;
+  --accent-color-2: #d28a6a;
+
   --submit-button: #6194cb;
-  --submit-button-hover: #007bff00;
-  --button-bg: #5d94cc00;
-  --button-hover: #ffffff00;
+  --submit-button-hover: #8ab3e5;
+  --button-bg: transparent;
+  --button-active-bg: #3a3a3a;
   --button-border: #6194cb;
-  --navbar-bg: #1e1e1e;
-  --footer-bg: #1a1a1a;
-  --input-field-bg: #1e1e1e;
+  --button-hover: rgba(255, 255, 255, 0.05);
+
+  --navbar-bg: #1f1f1f;
+  --footer-bg: #181818;
   --footer-text-color: #ffffff;
-  --placeholder-color: #aaaaaa;
+
+  --theme-toggle-btn-bg: #f5efcf;
+  --theme-toggle-text: #121212;
+
+  --input-field-bg: #2a2a2a;
+
   --box-shadow: rgba(0, 0, 0, 0.7);
 }
 
@@ -86,22 +113,6 @@ nav {
   border: 2px solid var(--text-color);
 }
 
-.nav-welcome {
-  display: flex;
-  gap: 0.5rem;
-  position: absolute;
-  font-weight: 600;
-  top: 1rem;
-  left: 1rem;
-}
-
-.welcome-logo {
-  width: 1.5rem;
-  height: auto;
-  padding: 0rem 0rem;
-  border-radius: 50%;
-}
-
 nav .nav-container {
   max-width: 1200px;
   margin: auto;
@@ -114,7 +125,7 @@ nav .nav-container {
 nav .nav-links {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 10px;
   transition: all 0.3s;
 }
 
@@ -128,6 +139,7 @@ nav .nav-links li a {
   gap: 0.5rem;
   width: 9rem;
   position: relative;
+  right: 3rem;
 }
 
 /* Icon */
@@ -174,11 +186,25 @@ nav .nav-links li a.active .nav-icon {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 2rem;
   border-left: 2px solid rgb(156, 156, 156);
   padding-left: 2rem;
   position: absolute;
   right: 1rem;
+}
+
+.nav-welcome {
+  display: flex;
+  gap: 0.5rem;
+  /* position: absolute; */
+  font-weight: 600;
+}
+
+.welcome-logo {
+  width: 1.5rem;
+  height: auto;
+  padding: 0rem 0rem;
+  border-radius: 50%;
 }
 
 nav .nav-container .theme-toggle-button {
@@ -424,6 +450,9 @@ section {
   text-align: center;
   text-transform: uppercase;
 }
+.component-heading span {
+  color: var(--link-color);
+}
 
 /* ================== SKILLS ================== */
 
@@ -512,6 +541,11 @@ footer {
     display: none;
   }
 
+  nav .nav-links li a {
+    position: relative;
+    right: 0rem;
+  }
+
   .nav-links {
     position: absolute;
     top: 70px;
@@ -557,7 +591,7 @@ footer {
 
   .nav-links {
     position: absolute;
-    top: 70px;
+    top: 50px;
     right: 0;
     width: 40%;
     height: 100vh;
@@ -565,7 +599,7 @@ footer {
     background: var(--navbar-bg);
     flex-direction: column;
     align-items: center;
-    padding-top: 2rem;
+    padding: 2rem 0rem;
     gap: 1.5rem;
 
     transform: translateX(100%);
@@ -616,5 +650,42 @@ footer {
     font-size: 1rem;
     color: white;
     transition: all 0.3s;
+  }
+}
+
+/* ================= MOBILE VIEW ================= */
+@media (max-width: 600px) {
+  /* 3-column layout */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  /* Hide the text */
+
+  .skill-card p {
+    display: none;
+  }
+
+  /* Center the icon only */
+  .skill-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 10px;
+    gap: 1rem;
+  }
+
+  .skill-card:hover img {
+    transform: translateY(10px) scale(1.2);
+  }
+
+  /* Make icon slightly bigger for mobile */
+  .skill-card img {
+    width: 45px !important;
+    height: 45px !important;
+    margin-bottom: 0;
   }
 }

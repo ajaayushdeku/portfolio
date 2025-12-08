@@ -57,7 +57,7 @@
 }
 
 /* The text overlay */
-.img-text {
+.img-text-container {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -67,7 +67,7 @@
   font-weight: 700;
   opacity: 0;
   transition: opacity 0.3s ease;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.536);
+
   text-transform: uppercase;
   /* pointer-events: none; */
 
@@ -79,15 +79,19 @@
 }
 
 /* Show text when hovering container */
-.project-img-container:hover .img-text {
+.project-img-container:hover .img-text-container {
   opacity: 1;
+}
+
+.project-label {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.536);
 }
 
 .project-btn {
   font-size: 1rem;
   font-weight: 700;
   text-decoration: none;
-  color: #0080ff;
+  color: var(--link-color);
   border: none;
   background-color: transparent;
 }
@@ -95,7 +99,7 @@
 .project-btn:hover {
   font-size: 1rem;
   text-decoration: underline;
-  color: #50a7ff;
+  color: #3d3c3c;
 }
 
 /* Content Section */

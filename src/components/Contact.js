@@ -7,17 +7,17 @@ import "../styles/Contact.css";
 const Contact = () => {
   const contactDetails = [
     {
-      icon: <FiMapPin size={22} color="#007bff" />,
+      icon: <FiMapPin size={22} />,
       label: "Address",
       value: "Prithivi-Chowk, Pokhara, Nepal",
     },
     {
-      icon: <LuPhone size={22} color="#007bff" />,
+      icon: <LuPhone size={22} />,
       label: "Phone",
       value: "+977 - 9814173184",
     },
     {
-      icon: <MdOutlineMailOutline size={22} color="#007bff" />,
+      icon: <MdOutlineMailOutline size={22} />,
       label: "Email",
       value: "ajaayushsth234@gmail.com",
     },
@@ -25,7 +25,9 @@ const Contact = () => {
 
   return (
     <section className="contact-section">
-      <h2 className="component-heading">Contact</h2>
+      <h2 className="component-heading">
+        My <span>Contacts</span>
+      </h2>
 
       <div className="contact-container">
         {/* Left Column: Contact Details */}
@@ -35,7 +37,7 @@ const Contact = () => {
             {contactDetails.map((item, index) => (
               <div className="contact-item" key={index}>
                 <span className="contact-icon">{item.icon}</span>
-                <div>
+                <div className="contact-info">
                   <h4>{item.label}</h4>
                   <p>{item.value}</p>
                 </div>

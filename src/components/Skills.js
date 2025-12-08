@@ -38,9 +38,11 @@ const skills = [
 
 const Skills = () => {
   return (
-    <section>
+    <section className="skills-section">
       <div className="skills-info-container">
-        <h2 className="component-heading">Skills</h2>
+        <h2 className="component-heading">
+          My <span>Skills</span>{" "}
+        </h2>
         <div className="skills-grid">
           {skills.map((skill) => (
             <div key={skill.name} className="skill-card">

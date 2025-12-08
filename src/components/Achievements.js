@@ -22,7 +22,9 @@ const achievements = [
 const Achievements = () => {
   return (
     <section id="achievements" className="achievements-container">
-      <h2 className="component-heading">Achievements</h2>
+      <h2 className="component-heading">
+        My <span>Achievements</span>
+      </h2>
 
       <div className="achievements-grid">
         {achievements.map((ach, index) => (

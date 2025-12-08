@@ -57,11 +57,7 @@ const Navbar = () => {
       <div className="nav-container">
         {/* Left Section: Logo */}
         <div className="nav-left">
-          {/* <img src={logo} alt="Portfolio Logo" className="nav-logo" /> */}
-
-          <p className="nav-welcome">
-            Welcome <img src={hi} className="welcome-logo" />
-          </p>
+          <img src={logo} alt="Portfolio Logo" className="nav-logo" />
 
           {/* Hamburger Button for Mobile */}
           <button
@@ -91,9 +87,11 @@ const Navbar = () => {
 
         {/* Right Section: Theme + GitHub + LinkedIn */}
         <div className="nav-right">
+          <div className="nav-welcome">
+            Welcome <img src={hi} className="welcome-logo" />
+          </div>
           <button onClick={toggleTheme} className="theme-toggle-button">
             <div>
-              {" "}
               {theme === "light" ? (
                 <MdDarkMode size={24} />
               ) : (

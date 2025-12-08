@@ -150,7 +150,9 @@ const Projects = () => {
 
   return (
     <section>
-      <h2 className="component-heading">Projects</h2>
+      <h2 className="component-heading">
+        My <span>Projects</span>
+      </h2>
 
       <div className="projects-grid">
         {projects.map((project) => (
@@ -165,8 +167,8 @@ const Projects = () => {
                   className={idx === imageIndices[project.name] ? "active" : ""}
                 />
               ))}
-              <h2 className="img-text">
-                {project.name}
+              <h2 className="img-text-container">
+                <p className="project-label">{project.name}</p>
                 <button
                   className="project-btn"
                   onClick={() => window.open(project.pdf, "_blank")}
