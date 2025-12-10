@@ -7,6 +7,8 @@
   --section-bg: #ffffff; /* clean white for sections */
   --card-bg: #f2f2f245; /* subtle grey for cards */
 
+  --background-image: url("../asset/cube.gif") center/cover no-repeat;
+
   /* Text colors */
   --text-color: #2d2c24;
   --inverse-text-color: #e6e6e6;
@@ -45,6 +47,8 @@
   --bg-color: #1c1c1c;
   --section-bg: #242424;
   --card-bg: #2a2a2a;
+
+  --background-image: url("../asset/bg-loop.gif") center/cover no-repeat;
 
   --text-color: #e6e6e6;
   --inverse-text-color: #2d2c24;
@@ -270,9 +274,9 @@ section {
 /* ================== HERO + ABOUT ================== */
 #home-about {
   width: 100%;
-  min-height: 95vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../asset/bg-loop.gif") center/cover no-repeat;
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+    var(--background-image);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -392,6 +396,16 @@ section {
 }
 
 /* Responsive */
+@media (max-width: 1200px) {
+  .hero-image-container {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    right: 0;
+    bottom: 4rem;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-about-container {
     flex-direction: column;
@@ -416,8 +430,11 @@ section {
   }
 
   .hero-image-container {
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    right: 0;
+    bottom: 4rem;
   }
 
   .about-cta,
@@ -437,8 +454,8 @@ section {
   }
 
   .hero-image-container {
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
   }
 }
 
@@ -461,6 +478,7 @@ section {
 /* ================== HEADING ================== */
 .component-heading {
   font-size: 2.3rem;
+  font-weight: 800;
   margin-bottom: 2rem;
   text-align: center;
   text-transform: uppercase;
@@ -563,7 +581,7 @@ footer {
 
   .nav-links {
     position: absolute;
-    top: 70px;
+    top: 0;
     right: 0;
     width: 40%;
     height: 100vh;

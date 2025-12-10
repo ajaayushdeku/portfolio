@@ -122,7 +122,7 @@ const switchPlayer = () => {
 
   document.querySelector(
     ".current-player"
-  ).textContent = `Current Player Turn: ${currentPlayer}`;
+  ).textContent = `Current Turn: Player ${currentPlayer}`;
 
   player1.style.border =
     currentPlayer === 1 ? activePlayerBorder : inActivePlayerBorder;
