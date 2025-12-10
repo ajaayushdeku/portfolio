@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dice-game-style.css" />
+    <title>Dice Game</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="game-title">🎲 Dice Game</h1>
+
+      <div class="point-limit-container">
+        <label for="point-limit">Max Point Limit:</label>
+        <input
+          type="number"
+          id="point-limit"
+          placeholder="Enter Max Point"
+          min="1"
+        />
+        <button id="set-limit">Set Limit</button>
+      </div>
+
+      <h1 class="winner">First Player to Reach</h1>
+    </header>
+
+    <section>
+      <div class="game-container">
+        <!-- Current Player -->
+        <div class="current-player">Current Player Turn: 1</div>
+        <div><button id="replay" class="btn">Replay</button></div>
+        <div class="highest-score">Highest Score: 0</div>
+
+        <!-- Score & Dice -->
+        <div class="dice-score-container">
+          <div class="player1-score card">
+            <div class="score-container">
+              <div class="total-score1">Total Score: 0</div>
+              <h3>Player 1</h3>
+              <div class="score-1">0</div>
+            </div>
+
+            <div class="progress-bar">
+              <div class="progress-fill"></div>
+            </div>
+          </div>
+
+          <div class="dice card">
+            <img src="./images/dice1.png" alt="Dice" class="dice-img" />
+            <div class="dice-num">Dice Number: 1</div>
+          </div>
+
+          <div class="player2-score card">
+            <div class="score-container">
+              <div class="total-score2">Total Score: 0</div>
+              <h3>Player 2</h3>
+              <div class="score-2">0</div>
+            </div>
+
+            <div class="progress-bar">
+              <div class="progress-fill"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Player Names -->
+        <div class="players-container">
+          <div class="player1 card">Player 1</div>
+          <div class="player2 card">Player 2</div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="button-container">
+          <button id="hold" class="btn">HOLD DICE</button>
+          <button id="next" class="btn">ROLL DICE</button>
+        </div>
+      </div>
+    </section>
+
+    <script src="dice-game-script.js"></script>
+  </body>
+</html>

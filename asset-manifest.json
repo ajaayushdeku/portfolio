@@ -1,15 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.6f5f7f38.css",
-    "main.js": "/static/js/main.835a0ccb.js",
+    "main.css": "/static/css/main.4ec02c14.css",
+    "main.js": "/static/js/main.f948036e.js",
     "static/js/453.6264690d.chunk.js": "/static/js/453.6264690d.chunk.js",
-    "static/media/face.jpeg": "/static/media/face.81621f812b5b248256bb.jpeg",
+    "static/media/bg-loop.gif": "/static/media/bg-loop.614b78cce3df171ebb16.gif",
     "static/media/logo.png": "/static/media/logo.5478cd238ed913feb425.png",
     "static/media/VisuoFind_ViewResult.png": "/static/media/VisuoFind_ViewResult.e57516520d57fa77c3c8.png",
     "static/media/BitcountPropSingle-VariableFont_CRSV,ELSH,ELXP,slnt,wght.ttf": "/static/media/BitcountPropSingle-VariableFont_CRSV,ELSH,ELXP,slnt,wght.98aff902da79b78ea950.ttf",
     "static/media/DodgeBlock_HowToPlay.png": "/static/media/DodgeBlock_HowToPlay.6363f039f52a02587a37.png",
     "static/media/mount-glasses.jpg": "/static/media/mount-glasses.00c5bdac474f6f41aa93.jpg",
     "static/media/VisuoFind_SearchBox.png": "/static/media/VisuoFind_SearchBox.4c552ff70e9a43de5032.png",
+    "static/media/DiceDuel_GamePlay2.png": "/static/media/DiceDuel_GamePlay2.d5d0f6adb6b08b689c7c.png",
+    "static/media/DiceDuel_GamePlay1.png": "/static/media/DiceDuel_GamePlay1.82e71001470992a0bda2.png",
+    "static/media/DiceDuel_Home.png": "/static/media/DiceDuel_Home.4b65b431542517c34230.png",
+    "static/media/DiceDuel_PlayScreen.png": "/static/media/DiceDuel_PlayScreen.e89a7ca94b0f64dbdd1d.png",
+    "static/media/DiceDuel_PointLimitSetter.png": "/static/media/DiceDuel_PointLimitSetter.c474fd9700cf8e3969e7.png",
+    "static/media/DiceDuel_Result.png": "/static/media/DiceDuel_Result.d7fb04aca9252fd7d3cf.png",
     "static/media/VisuoFind_Home.png": "/static/media/VisuoFind_Home.c865b9436534f66f17b7.png",
     "static/media/DodgeBlock_Home.png": "/static/media/DodgeBlock_Home.6add3b2f7c1caed092e1.png",
     "static/media/DodgeBlock_GamePlay.png": "/static/media/DodgeBlock_GamePlay.847f0008dc6267400488.png",
@@ -18,16 +24,19 @@
     "static/media/MerchVault_Artist.jpg": "/static/media/MerchVault_Artist.017b8e65365644beaf59.jpg",
     "static/media/MerchVault_Home.jpg": "/static/media/MerchVault_Home.f749ec4526d1e621a329.jpg",
     "static/media/MerchVault_Customize.jpg": "/static/media/MerchVault_Customize.cef5c3eefd6a595ec3dc.jpg",
-    "static/media/Audiowide-Regular.ttf": "/static/media/Audiowide-Regular.909342598b3adb03b2e6.ttf",
+    "static/media/BloodWorks_Event.jpg": "/static/media/BloodWorks_Event.47e73d80c5e07d04395d.jpg",
     "static/media/high.jpg": "/static/media/high.8a53ebdcabd8f9de9a18.jpg",
+    "static/media/BloodWorks_UserDashSettings.jpg": "/static/media/BloodWorks_UserDashSettings.ef18e7385dce40c7b5e7.jpg",
+    "static/media/BloodWorks_BloodBank.jpg": "/static/media/BloodWorks_BloodBank.da2d5d3dc334c57d1447.jpg",
+    "static/media/BloodWorks_Home.jpg": "/static/media/BloodWorks_Home.4ea7a5e155094472fe12.jpg",
     "static/media/hi.gif": "/static/media/hi.79bce947eb8ded855193.gif",
     "index.html": "/index.html",
-    "main.6f5f7f38.css.map": "/static/css/main.6f5f7f38.css.map",
-    "main.835a0ccb.js.map": "/static/js/main.835a0ccb.js.map",
+    "main.4ec02c14.css.map": "/static/css/main.4ec02c14.css.map",
+    "main.f948036e.js.map": "/static/js/main.f948036e.js.map",
     "453.6264690d.chunk.js.map": "/static/js/453.6264690d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6f5f7f38.css",
-    "static/js/main.835a0ccb.js"
+    "static/css/main.4ec02c14.css",
+    "static/js/main.f948036e.js"
   ]
 }
