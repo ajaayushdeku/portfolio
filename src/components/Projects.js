@@ -38,7 +38,7 @@ const projects = [
   {
     name: "Dice Duel",
     desc: "Dice Duel is an interactive two-player game where players take turns rolling a dice, accumulating points, and competing to reach the maximum score first. Built with HTML, CSS, and JavaScript, it features dynamic score tracking, progress bars, and a gaming-inspired UI.",
-    demo: "/projects/Dice%20Game/index.html",
+    demo: "/projects/Dice%20Game/dice-game.html",
     img: [diceduel1, diceduel2, diceduel3, diceduel4, diceduel5, diceduel6],
     tags: ["HTML", "CSS", "JavaScript"],
   },

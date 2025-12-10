@@ -360,15 +360,15 @@ section {
 /* Right Column: Image */
 .hero-about-right {
   flex: 1;
-  min-width: 300px;
+  min-width: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .hero-image-container {
-  width: 500px;
-  height: 500px;
+  width: 350px;
+  height: 350px;
   border-radius: 50%;
   overflow: hidden;
   /* border: 5px solid var(--link-color); */
@@ -376,6 +376,8 @@ section {
   justify-content: center;
   align-items: center;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  right: 15rem;
 }
 
 .hero-about-image {
