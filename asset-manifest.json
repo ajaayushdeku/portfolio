@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.463139b8.css",
-    "main.js": "/static/js/main.d391e266.js",
+    "main.css": "/static/css/main.dad7ea83.css",
+    "main.js": "/static/js/main.2cb876cb.js",
     "static/js/453.6264690d.chunk.js": "/static/js/453.6264690d.chunk.js",
     "static/media/bg-loop.gif": "/static/media/bg-loop.614b78cce3df171ebb16.gif",
     "static/media/logo.png": "/static/media/logo.5478cd238ed913feb425.png",
@@ -32,12 +32,12 @@
     "static/media/BloodWorks_Home.jpg": "/static/media/BloodWorks_Home.4ea7a5e155094472fe12.jpg",
     "static/media/hi.gif": "/static/media/hi.79bce947eb8ded855193.gif",
     "index.html": "/index.html",
-    "main.463139b8.css.map": "/static/css/main.463139b8.css.map",
-    "main.d391e266.js.map": "/static/js/main.d391e266.js.map",
+    "main.dad7ea83.css.map": "/static/css/main.dad7ea83.css.map",
+    "main.2cb876cb.js.map": "/static/js/main.2cb876cb.js.map",
     "453.6264690d.chunk.js.map": "/static/js/453.6264690d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.463139b8.css",
-    "static/js/main.d391e266.js"
+    "static/css/main.dad7ea83.css",
+    "static/js/main.2cb876cb.js"
   ]
 }
