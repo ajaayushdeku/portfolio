@@ -50,27 +50,58 @@ setLimitBtn.addEventListener("click", () => {
 });
 
 // Reset Game Function Logic
+// Reset Game Function Logic
 const ResetGame = () => {
+  // Reset scores
   totalScore = [0, 0];
   score = [0, 0];
+  currentPlayer = 1;
 
+  // Reset score displays
   document.querySelector(".total-score1").textContent = `Total Score: 0`;
   document.querySelector(".total-score2").textContent = `Total Score: 0`;
   document.querySelector(".score-1").textContent = 0;
   document.querySelector(".score-2").textContent = 0;
 
-  document.querySelector(".dice-img").src = `./images/dice1.png`;
+  // Reset dice
+  const diceImg = document.querySelector(".dice-img");
+  diceImg.src = `./images/dice1.png`;
   document.querySelector(".dice-num").textContent = `Dice Number : 1`;
 
+  // Reset dice highlights
+  dice.classList.remove("dice1-highlight", "dice2-highlight");
   dice.classList.add("dice1-highlight");
+
+  // Reset player styles
   player1.style.border = activePlayerBorder;
   player1.style.opacity = activePlayerOpacity;
   player2.style.border = inActivePlayerBorder;
   player2.style.opacity = inActivePlayerOpacity;
 
+  // Reset current player display
+  document.querySelector(
+    ".current-player"
+  ).textContent = `Current Turn: Player 1`;
+
+  // Reset winner display
   winner.textContent = `First Player to Reach ${pointLimit} Points Wins!!!`;
+
+  // Reset progress bars
+  const progressFill1 = document.querySelector(".player1-score .progress-fill");
+  const progressFill2 = document.querySelector(".player2-score .progress-fill");
+  if (progressFill1) progressFill1.style.width = "0%";
+  if (progressFill2) progressFill2.style.width = "0%";
+
+  // Show buttons
   buttonCont.style.display = "block";
+
+  // Reset highest score display
+  document.querySelector(".highest-score").textContent = `Highest Score: 0`;
+
+  console.log("Game has been reset");
 };
+
+document.getElementById("replay").addEventListener("click", ResetGame);
 
 document.getElementById("replay").addEventListener("click", ResetGame);
 
