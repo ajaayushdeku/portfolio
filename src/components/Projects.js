@@ -129,25 +129,25 @@ const Projects = () => {
               className={idx === imageIndices[project.name] ? "active" : ""}
             />
           ))}
-        </div>
 
-        <div className="project-overlay">
-          <h3 className="project-overlay-title">{project.name}</h3>
-          {project.demo ? (
-            <button
-              className="project-overlay-btn"
-              onClick={() => window.open(project.demo, "_blank")}
-            >
-              <span>Play Demo</span>→
-            </button>
-          ) : (
-            <button
-              className="project-overlay-btn"
-              onClick={() => window.open(project.pdf, "_blank")}
-            >
-              <span>View Report </span> →
-            </button>
-          )}
+          <div className="project-overlay">
+            <h3 className="project-overlay-title">{project.name}</h3>
+            {project.demo ? (
+              <button
+                className="project-overlay-btn"
+                onClick={() => window.open(project.demo, "_blank")}
+              >
+                <span>Play Demo</span>→
+              </button>
+            ) : (
+              <button
+                className="project-overlay-btn"
+                onClick={() => window.open(project.pdf, "_blank")}
+              >
+                <span>View Report </span> →
+              </button>
+            )}
+          </div>
         </div>
 
         <div className="project-content">
