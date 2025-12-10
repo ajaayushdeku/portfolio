@@ -50,7 +50,6 @@ setLimitBtn.addEventListener("click", () => {
 });
 
 // Reset Game Function Logic
-// Reset Game Function Logic
 const ResetGame = () => {
   // Reset scores
   totalScore = [0, 0];
