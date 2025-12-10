@@ -1,30 +1,32 @@
 import React, { useEffect, useState } from "react";
-import sampleImg from "../asset/mount-glasses.jpg"; // add your image here
-import sampleImg2 from "../asset/face.jpeg"; // add your image here
+import bloodworks1 from "../asset/images/BloodWorks/BloodWorks_Home.jpg";
+import bloodworks2 from "../asset/images/BloodWorks/BloodWorks_BloodBank.jpg";
+import bloodworks3 from "../asset/images/BloodWorks/BloodWorks_Event.jpg";
+import bloodworks4 from "../asset/images/BloodWorks/BloodWorks_UserDashSettings.jpg";
 
-import dodgeBlock1 from "../asset/DodgeBlock_Home.png";
-import dodgeBlock2 from "../asset/DodgeBlock_HowToPlay.png";
-import dodgeBlock3 from "../asset/DodgeBlock_GamePlay.png";
-import dodgeBlock4 from "../asset/DodgeBlock_ResultScreen.png";
+import dodgeBlock1 from "../asset/images/Dodge_Block/DodgeBlock_Home.png";
+import dodgeBlock2 from "../asset/images/Dodge_Block/DodgeBlock_HowToPlay.png";
+import dodgeBlock3 from "../asset/images/Dodge_Block/DodgeBlock_GamePlay.png";
+import dodgeBlock4 from "../asset/images/Dodge_Block/DodgeBlock_ResultScreen.png";
 
-import merchVault1 from "../asset/MerchVault_Home.jpg";
-import merchVault2 from "../asset/MerchVault_Customize.jpg";
-import merchVault3 from "../asset/MerchVault_Artist.jpg";
-import merchVault4 from "../asset/MerchVault_ProductPage.jpg";
+import diceduel1 from "../asset/images/Dice_Duel/DiceDuel_Home.png";
+import diceduel2 from "../asset/images/Dice_Duel/DiceDuel_PointLimitSetter.png";
+import diceduel4 from "../asset/images/Dice_Duel/DiceDuel_GamePlay1.png";
+import diceduel5 from "../asset/images/Dice_Duel/DiceDuel_GamePlay2.png";
+import diceduel3 from "../asset/images/Dice_Duel/DiceDuel_PlayScreen.png";
+import diceduel6 from "../asset/images/Dice_Duel/DiceDuel_Result.png";
 
-import visuoFind1 from "../asset/VisuoFind_Home.png";
-import visuoFind2 from "../asset/VisuoFind_SearchBox.png";
-import visuoFind3 from "../asset/VisuoFind_ViewResult.png";
+import merchVault1 from "../asset/images/MerchVault/MerchVault_Home.jpg";
+import merchVault2 from "../asset/images/MerchVault/MerchVault_Customize.jpg";
+import merchVault3 from "../asset/images/MerchVault/MerchVault_Artist.jpg";
+import merchVault4 from "../asset/images/MerchVault/MerchVault_ProductPage.jpg";
+
+import visuoFind1 from "../asset/images/VisuoFind/VisuoFind_Home.png";
+import visuoFind2 from "../asset/images/VisuoFind/VisuoFind_SearchBox.png";
+import visuoFind3 from "../asset/images/VisuoFind/VisuoFind_ViewResult.png";
 import "../styles/Projects.css";
 
 const projects = [
-  {
-    name: "BloodWorks",
-    desc: "BloodWorks is a platform that connects blood donors with people in need. Hospitals and organizations can also register to display their available donors and post blood donation events, helping increase participation and awareness.",
-    pdf: "/pdf/BloodWorks.pdf",
-    img: [sampleImg, sampleImg2, sampleImg, sampleImg2],
-    tags: ["HTML", "CSS", "JavaScript", "MySQL"],
-  },
   {
     name: "Dodge Block",
     desc: "Dodge Block is a 3D single-player game built with Unity. Players control a car and must avoid falling blocks and obstacles to survive longer and achieve higher scores.",
@@ -32,6 +34,15 @@ const projects = [
     img: [dodgeBlock1, dodgeBlock2, dodgeBlock3, dodgeBlock4],
     tags: ["C#", "Unity3D", "Blender"],
   },
+
+  {
+    name: "Dice Duel",
+    desc: "Dice Duel is an interactive two-player game where players take turns rolling a dice, accumulating points, and competing to reach the maximum score first. Built with HTML, CSS, and JavaScript, it features dynamic score tracking, progress bars, and a gaming-inspired UI.",
+    demo: "/projects/Dice%20Game/index.html",
+    img: [diceduel1, diceduel2, diceduel3, diceduel4, diceduel5, diceduel6],
+    tags: ["HTML", "CSS", "JavaScript"],
+  },
+
   {
     name: "MerchVault",
     desc: "MerchVault is an e-commerce platform for selling apparel such as t-shirts, hoodies, posters, and more. Users can customize products with graphics or text, and creators can upload and sell their own designs on the marketplace.",
@@ -45,6 +56,13 @@ const projects = [
     pdf: "/pdf/VisuoFind.pdf",
     img: [visuoFind1, visuoFind2, visuoFind3],
     tags: ["HTML", "CSS", "React.js", "Python", "Spring Boot", "PostgreSQL"],
+  },
+  {
+    name: "BloodWorks",
+    desc: "BloodWorks is a platform that connects blood donors with people in need. Hospitals and organizations can also register to display their available donors and post blood donation events, helping increase participation and awareness.",
+    pdf: "/pdf/BloodWorks.pdf",
+    img: [bloodworks1, bloodworks2, bloodworks3, bloodworks4],
+    tags: ["HTML", "CSS", "JavaScript", "MySQL"],
   },
 ];
 
@@ -149,7 +167,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <section>
+    <section className="project-section">
       <h2 className="component-heading">
         My <span>Projects</span>
       </h2>
@@ -169,12 +187,21 @@ const Projects = () => {
               ))}
               <h2 className="img-text-container">
                 <p className="project-label">{project.name}</p>
-                <button
-                  className="project-btn"
-                  onClick={() => window.open(project.pdf, "_blank")}
-                >
-                  View Project Report →
-                </button>
+                {project.demo ? (
+                  <button
+                    className="project-btn"
+                    onClick={() => window.open(project.demo, "_blank")}
+                  >
+                    View Demo →
+                  </button>
+                ) : (
+                  <button
+                    className="project-btn"
+                    onClick={() => window.open(project.pdf, "_blank")}
+                  >
+                    View Report →
+                  </button>
+                )}
               </h2>
             </div>
 

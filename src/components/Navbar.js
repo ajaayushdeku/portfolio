@@ -4,7 +4,7 @@ import { MdDarkMode, MdSunny } from "react-icons/md";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import { AiFillHome, AiOutlineProject } from "react-icons/ai";
-import { FaUserGraduate, FaTools, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaUserGraduate, FaTools } from "react-icons/fa";
 import { MdContacts } from "react-icons/md";
 import logo from "../asset/logo.png";
 import hi from "../asset/hi.gif";
@@ -88,7 +88,7 @@ const Navbar = () => {
         {/* Right Section: Theme + GitHub + LinkedIn */}
         <div className="nav-right">
           <div className="nav-welcome">
-            Welcome <img src={hi} className="welcome-logo" />
+            Welcome <img src={hi} alt="Hi" className="welcome-logo" />
           </div>
           <button onClick={toggleTheme} className="theme-toggle-button">
             <div>

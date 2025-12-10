@@ -9,6 +9,7 @@
 
   /* Text colors */
   --text-color: #2d2c24;
+  --inverse-text-color: #e6e6e6;
   --info-text-color: #6b623f;
   --placeholder-color: #8b815a;
   --accent-color: #6194cb;
@@ -46,6 +47,7 @@
   --card-bg: #2a2a2a;
 
   --text-color: #e6e6e6;
+  --inverse-text-color: #2d2c24;
   --info-text-color: #b5b5b5;
   --placeholder-color: #888888;
 
@@ -97,7 +99,7 @@ nav {
   left: 0;
   background: var(--navbar-bg);
   z-index: 1000;
-  transition: background-color 0.3s;
+  transition: all 0.3s;
 }
 
 .nav-logo {
@@ -119,6 +121,7 @@ nav .nav-container {
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
+  transition: all 0.3s;
 }
 
 nav .nav-links {
@@ -245,10 +248,21 @@ nav .nav-container .theme-toggle-button:hover div {
 
 /* ================== SECTIONS ================== */
 section {
+  padding: 3rem 0px;
+  width: 100%;
+  margin: auto;
+  /* background-color: var(--section-bg); */
+  transition: background-color 0.3s;
+}
+
+.skills-section,
+.achievement-section,
+.project-section,
+.contact-section {
   padding: 3rem 20px;
   width: 100%;
   margin: auto;
-  background-color: var(--section-bg);
+  /* background-color: var(--section-bg); */
   transition: background-color 0.3s;
 }
 
@@ -257,7 +271,8 @@ section {
 #home-about {
   width: 100%;
   min-height: 95vh;
-  background-color: var(--section-bg);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../asset/bg-loop.gif") center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;

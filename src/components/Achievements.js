@@ -21,7 +21,7 @@ const achievements = [
 
 const Achievements = () => {
   return (
-    <section id="achievements" className="achievements-container">
+    <section id="achievement-section" className="achievements-container">
       <h2 className="component-heading">
         My <span>Achievements</span>
       </h2>

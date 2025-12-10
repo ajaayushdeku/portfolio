@@ -1,0 +1,334 @@
+/* ---- Import a pixel-style font ---- */
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Press Start 2P", system-ui;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #2e2e2e, #343434);
+  color: var(--text-color, #2d2c24);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+body {
+  text-align: center;
+  padding: 20px;
+}
+
+h1.game-title {
+  font-size: 26px;
+  margin-bottom: 30px;
+  color: #ffffff;
+  text-shadow: 0 0 10px #315254, 0 0 20px #6194cb;
+}
+
+section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+}
+.winner {
+  color: #f0c95d;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.point-limit-container {
+  margin: 15px 0;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 0.7rem;
+}
+
+.point-limit-container input {
+  padding: 8px 10px;
+  border-radius: 5px;
+  border: 1px solid white;
+  font-size: 0.7rem;
+  font-family: "Press Start 2P", system-ui;
+}
+
+.point-limit-container button {
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: none;
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+
+/* ---- Main Container ---- */
+.game-container {
+  width: 95%;
+  /* max-width: 900px; */
+  padding: 30px;
+  background: linear-gradient(135deg, #2e2e2e, #343434);
+  border: 3px solid #6194cb;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+
+  position: relative;
+}
+
+.highest-score {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  color: white;
+  text-shadow: 0 0 5px #599cc9;
+}
+
+/* ---- Current Player ---- */
+.current-player {
+  font-size: 14px;
+  color: #ffffff;
+  margin-bottom: 10px;
+  text-shadow: 0 0 5px #599cc9;
+}
+
+/* ---- Dice & Score Layout ---- */
+.dice-score-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.player1-score,
+.player2-score,
+.dice {
+  flex: 1;
+  min-width: 120px;
+  max-width: 300px;
+  padding: 15px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #2e2e2e, #343434);
+  color: #ffffff;
+  text-shadow: 0 0 5px #3f5431;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.player1-score {
+  border: 2px solid #6194cb;
+}
+
+.player2-score {
+  border: 2px solid #f74444;
+}
+
+.score-container {
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none; /* doesn’t block clicks */
+}
+
+.progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%; /* starts empty */
+
+  /* border-radius: 12px; */
+  box-sizing: border-box;
+  transition: width 0.3s ease;
+  z-index: 1;
+}
+
+.player1-score .progress-fill {
+  background-color: #6194cb;
+}
+
+.player2-score .progress-fill {
+  background-color: #f74444;
+}
+
+.dice {
+  border: none;
+  box-shadow: 0 0 10px #ffffff65, 0 0 10px #c8c8c938;
+}
+
+.dice img {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dice img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #6194cb, 0 0 25px #38558d;
+}
+
+.total-score1,
+.total-score2 {
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
+.score-1,
+.score-2 {
+  font-size: 4rem;
+  margin-top: 8px;
+}
+
+/* ---- Player Names ---- */
+.players-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 100%;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.player1,
+.player2 {
+  flex: 1;
+  /* min-width: 140px; */
+  /* max-width: 300px; */
+  padding: 15px;
+  border-radius: 12px;
+  /* background: linear-gradient(145deg, #eac95eff, rgb(178, 154, 74)); */
+  /* box-shadow: 0 0 3px #eac95eff, 0 0 3px rgb(178, 154, 74); */
+  border: 2px solid #000000;
+  color: #ffffff;
+  text-shadow: 0 0 8px #59bec9;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.player1 {
+  background-color: #6194cb;
+}
+
+.player2 {
+  background-color: #f74444;
+}
+
+.player1:hover,
+.player2:hover {
+  transform: scale(1.01) translateY(-3px);
+}
+
+/* ---- Buttons ---- */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+button {
+  padding: 1.5rem 2rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(145deg, #365280, #5562af);
+  color: #eeeeee;
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.1) translateY(-5px);
+  box-shadow: 0 0 10px #6194cb, 0 0 10px #38558d;
+}
+
+#replay {
+  padding: 0.7rem 1.5rem;
+  font-size: 0.8rem;
+}
+
+/* ---- Highlight Dice for effects ---- */
+.dice1-highlight {
+  transform: scale(1.1);
+  background: #6194cb;
+  transition: all 0.3s ease-in-out;
+}
+
+.dice2-highlight {
+  transform: scale(1.1);
+  background: #f74444;
+  transition: all 0.3s ease-in-out;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .dice-score-container,
+  .players-container {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .dice img {
+    width: 100px;
+    height: 100px;
+  }
+
+  button {
+    font-size: 10px;
+    padding: 10px 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dice img {
+    width: 80px;
+    height: 80px;
+  }
+
+  button {
+    font-size: 10px;
+    padding: 8px 14px;
+  }
+
+  .player1,
+  .player2 {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
