@@ -24,14 +24,17 @@ import merchVault4 from "../asset/images/MerchVault/MerchVault_ProductPage.jpg";
 import visuoFind1 from "../asset/images/VisuoFind/VisuoFind_Home.png";
 import visuoFind2 from "../asset/images/VisuoFind/VisuoFind_SearchBox.png";
 import visuoFind3 from "../asset/images/VisuoFind/VisuoFind_ViewResult.png";
+
 import "../styles/Projects.css";
+
+import sampleImg from "../asset/bggg.gif";
 
 import judgegy from "../asset/background-gif7.gif";
 const allProjects = [
   {
     name: "Dodge Block",
     desc: "Dodge Block is a 3D single-player game built with Unity. Players control a car and must avoid falling blocks and obstacles to survive longer and achieve higher scores.",
-    pdf: "/pdf/MerchVault.pdf",
+    demo: "/unity-demo/index.html",
     img: [dodgeBlock1, dodgeBlock2, dodgeBlock3, dodgeBlock4],
     tags: ["C#", "Unity3D", "Blender"],
     type: "game",
@@ -43,6 +46,16 @@ const allProjects = [
     img: [diceduel1, diceduel2, diceduel3, diceduel4, diceduel5, diceduel6],
     tags: ["HTML", "CSS", "JavaScript"],
     type: "game",
+  },
+
+  {
+    name: "Lets Quiz",
+    desc: "Lets Quiz is a complete quiz-management platform where admins can create quizzes, rounds, questions, and teams, while assigned Quiz Masters can host the game in real time. The system supports multiple round types including General (MCQ), Subjective (category-based), Rapid Fire (timed question streaks), Estimation (teams provide numerical estimates), and Buzzer (fastest buzz gets to answer). It also provides detailed quiz history, team performance tracking, and admin-level monitoring for smooth event execution.",
+
+    pdf: "/pdf/MerchVault.pdf",
+    img: [sampleImg],
+    tags: ["HTML", "CSS", "React.js", "Node.js", "MongoDB"],
+    type: "web",
   },
   {
     name: "MerchVault",

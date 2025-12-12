@@ -6,7 +6,8 @@
   --section-bg: #242424;
   --card-bg: #2a2a2a;
 
-  --background-image: url("../asset/background-gif2.gif") center/cover no-repeat;
+  --background-image: url("../asset/background-gif2-2.gif") center/cover
+    no-repeat;
 
   --text-color: #e6e6e6;
   --inverse-text-color: #2d2c24;
@@ -44,7 +45,8 @@
   --section-bg: #ffffff; /* clean white for sections */
   --card-bg: #f2f2f245; /* subtle grey for cards */
 
-  --background-image: url("../asset/background-gif2.gif") center/cover no-repeat;
+  --background-image: url("../asset/background-gif2-1.gif") center/cover
+    no-repeat;
 
   /* Text colors */
   --text-color: #2d2c24;
