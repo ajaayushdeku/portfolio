@@ -27,7 +27,11 @@ const Hero = () => {
             <a href="#projects" className="about-cta">
               View My Work
             </a>
-            <a href="#projects" className="about-cv">
+            <a
+              href="/pdf/Aayush_Shrestha_CV.pdf"
+              download="Aayush-Shrestha-CV.pdf"
+              className="about-cv"
+            >
               Download CV
             </a>
           </div>

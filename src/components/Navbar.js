@@ -10,7 +10,7 @@ import logo from "../asset/logo.png";
 import hi from "../asset/hi.gif";
 
 const Navbar = () => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home"); // Track active
 
@@ -41,7 +41,7 @@ const Navbar = () => {
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
+    setTheme(theme === "dark" ? "light" : "dark");
   };
 
   const navItems = [
@@ -92,10 +92,10 @@ const Navbar = () => {
           </div>
           <button onClick={toggleTheme} className="theme-toggle-button">
             <div>
-              {theme === "light" ? (
-                <MdDarkMode size={24} />
-              ) : (
+              {theme === "dark" ? (
                 <MdSunny size={24} />
+              ) : (
+                <MdDarkMode size={24} />
               )}
             </div>
           </button>

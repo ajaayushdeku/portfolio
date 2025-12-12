@@ -1,13 +1,50 @@
 /* ================== VARIABLES ================== */
 
-/* ================== LIGHT THEME ================== */
+/* ================== DARK THEME ================== */
 :root {
+  --bg-color: #1c1c1c;
+  --section-bg: #242424;
+  --card-bg: #2a2a2a;
+
+  --background-image: url("../asset/background-gif2.gif") center/cover no-repeat;
+
+  --text-color: #e6e6e6;
+  --inverse-text-color: #2d2c24;
+  --info-text-color: #b5b5b5;
+  --placeholder-color: #888888;
+
+  /* accents keep same theme identity */
+  --link-color: #6194cb;
+  --accent-color: #6194cb;
+  --accent-color-2: #d28a6a;
+
+  --submit-button: #6194cb;
+  --submit-button-hover: #8ab3e5;
+  --button-bg: transparent;
+  --button-active-bg: #3a3a3a;
+  --button-border: #6194cb;
+  --button-hover: rgba(255, 255, 255, 0.05);
+
+  --navbar-bg: #1f1f1f;
+  --footer-bg: #181818;
+  --footer-text-color: #ffffff;
+
+  --theme-toggle-btn-bg: #f5efcf;
+  --theme-toggle-text: #121212;
+
+  --input-field-bg: #2a2a2a;
+
+  --box-shadow: rgba(0, 0, 0, 0.7);
+}
+
+/* ================== LIGHT THEME ================== */
+[data-theme="light"] {
   /* Main brand colors */
   --bg-color: #f7f7f7; /* light greyish-white for overall background */
   --section-bg: #ffffff; /* clean white for sections */
   --card-bg: #f2f2f245; /* subtle grey for cards */
 
-  --background-image: url("../asset/cube.gif") center/cover no-repeat;
+  --background-image: url("../asset/background-gif2.gif") center/cover no-repeat;
 
   /* Text colors */
   --text-color: #2d2c24;
@@ -40,43 +77,6 @@
 
   /* Input fields */
   --input-field-bg: #ffffff;
-}
-
-/* ================== DARK THEME ================== */
-[data-theme="dark"] {
-  --bg-color: #1c1c1c;
-  --section-bg: #242424;
-  --card-bg: #2a2a2a;
-
-  --background-image: url("../asset/bg-loop.gif") center/cover no-repeat;
-
-  --text-color: #e6e6e6;
-  --inverse-text-color: #2d2c24;
-  --info-text-color: #b5b5b5;
-  --placeholder-color: #888888;
-
-  /* accents keep same theme identity */
-  --link-color: #6194cb;
-  --accent-color: #6194cb;
-  --accent-color-2: #d28a6a;
-
-  --submit-button: #6194cb;
-  --submit-button-hover: #8ab3e5;
-  --button-bg: transparent;
-  --button-active-bg: #3a3a3a;
-  --button-border: #6194cb;
-  --button-hover: rgba(255, 255, 255, 0.05);
-
-  --navbar-bg: #1f1f1f;
-  --footer-bg: #181818;
-  --footer-text-color: #ffffff;
-
-  --theme-toggle-btn-bg: #f5efcf;
-  --theme-toggle-text: #121212;
-
-  --input-field-bg: #2a2a2a;
-
-  --box-shadow: rgba(0, 0, 0, 0.7);
 }
 
 /* ================== RESET ================== */
@@ -274,7 +274,7 @@ section {
 /* ================== HERO + ABOUT ================== */
 #home-about {
   width: 100%;
-  min-height: 100vh;
+  min-height: 110vh;
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
     var(--background-image);
   display: flex;

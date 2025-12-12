@@ -26,6 +26,7 @@ import visuoFind2 from "../asset/images/VisuoFind/VisuoFind_SearchBox.png";
 import visuoFind3 from "../asset/images/VisuoFind/VisuoFind_ViewResult.png";
 import "../styles/Projects.css";
 
+import judgegy from "../asset/background-gif7.gif";
 const allProjects = [
   {
     name: "Dodge Block",
@@ -64,7 +65,7 @@ const allProjects = [
     desc: "BloodWorks is a platform that connects blood donors with people in need. Hospitals and organizations can also register to display their available donors and post blood donation events, helping increase participation and awareness.",
     pdf: "/pdf/BloodWorks.pdf",
     img: [bloodworks1, bloodworks2, bloodworks3, bloodworks4],
-    tags: ["HTML", "CSS", "JavaScript", "MySQL"],
+    tags: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
     type: "web",
   },
 ];
@@ -80,6 +81,8 @@ const tagStyles = {
   Blender: { bg: "#e87400", shadow: "#a95500", color: "#225785" },
   Python: { bg: "#3474a8", shadow: "#225785", color: "#ffcf3d" },
   "Node.js": { bg: "#69a164", shadow: "#4a7350", color: "#323330" },
+  PHP: { bg: "#7b7fb5", shadow: "#666a9ece", color: "#323330" },
+
   MySQL: { bg: "#004463", shadow: "#002e44", color: "#e07014" },
   "Spring Boot": { bg: "#6db53e", shadow: "#4c822a", color: "#ffffff" },
   PostgreSQL: { bg: "#3a6b94", shadow: "#2a4d6d", color: "#ffffff" },
@@ -206,6 +209,7 @@ const Projects = () => {
       <div className="projects-section">
         <div className="section-divider">
           <h2>🎮 Games</h2>
+          <img src={judgegy} alt="judgegy" className="judgegy" />
         </div>
         <div className="projects-grid">
           {gameProjects.map((project, index) => (
