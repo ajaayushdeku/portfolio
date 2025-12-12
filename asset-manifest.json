@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.2b219e9d.css",
-    "main.js": "/static/js/main.684e1de4.js",
+    "main.css": "/static/css/main.08cd4db3.css",
+    "main.js": "/static/js/main.a7702aac.js",
     "static/js/453.6264690d.chunk.js": "/static/js/453.6264690d.chunk.js",
+    "static/media/bggg.gif": "/static/media/bggg.09fb9f3805000938643c.gif",
     "static/media/logo.png": "/static/media/logo.5478cd238ed913feb425.png",
     "static/media/VisuoFind_ViewResult.png": "/static/media/VisuoFind_ViewResult.e57516520d57fa77c3c8.png",
     "static/media/BitcountPropSingle-VariableFont_CRSV,ELSH,ELXP,slnt,wght.ttf": "/static/media/BitcountPropSingle-VariableFont_CRSV,ELSH,ELXP,slnt,wght.98aff902da79b78ea950.ttf",
@@ -15,9 +16,10 @@
     "static/media/DiceDuel_PlayScreen.png": "/static/media/DiceDuel_PlayScreen.e89a7ca94b0f64dbdd1d.png",
     "static/media/DiceDuel_PointLimitSetter.png": "/static/media/DiceDuel_PointLimitSetter.c474fd9700cf8e3969e7.png",
     "static/media/DiceDuel_Result.png": "/static/media/DiceDuel_Result.d7fb04aca9252fd7d3cf.png",
-    "static/media/background-gif2.gif": "/static/media/background-gif2.a7f101e21e098b0c95c8.gif",
     "static/media/VisuoFind_Home.png": "/static/media/VisuoFind_Home.c865b9436534f66f17b7.png",
     "static/media/DodgeBlock_Home.png": "/static/media/DodgeBlock_Home.6add3b2f7c1caed092e1.png",
+    "static/media/background-gif2-1.gif": "/static/media/background-gif2-1.a6fc585830d824ae06f5.gif",
+    "static/media/background-gif2-2.gif": "/static/media/background-gif2-2.cad47677259735634628.gif",
     "static/media/DodgeBlock_GamePlay.png": "/static/media/DodgeBlock_GamePlay.847f0008dc6267400488.png",
     "static/media/DodgeBlock_ResultScreen.png": "/static/media/DodgeBlock_ResultScreen.a2af4f41fe33c76d5983.png",
     "static/media/MerchVault_ProductPage.jpg": "/static/media/MerchVault_ProductPage.cff0ee62dc2fbd775b5c.jpg",
@@ -32,12 +34,12 @@
     "static/media/hi.gif": "/static/media/hi.79bce947eb8ded855193.gif",
     "static/media/background-gif7.gif": "/static/media/background-gif7.ba13387192bce02578bd.gif",
     "index.html": "/index.html",
-    "main.2b219e9d.css.map": "/static/css/main.2b219e9d.css.map",
-    "main.684e1de4.js.map": "/static/js/main.684e1de4.js.map",
+    "main.08cd4db3.css.map": "/static/css/main.08cd4db3.css.map",
+    "main.a7702aac.js.map": "/static/js/main.a7702aac.js.map",
     "453.6264690d.chunk.js.map": "/static/js/453.6264690d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2b219e9d.css",
-    "static/js/main.684e1de4.js"
+    "static/css/main.08cd4db3.css",
+    "static/js/main.a7702aac.js"
   ]
 }
