@@ -1,12 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.dad7ea83.css",
-    "main.js": "/static/js/main.2cb876cb.js",
+    "main.css": "/static/css/main.2b219e9d.css",
+    "main.js": "/static/js/main.684e1de4.js",
     "static/js/453.6264690d.chunk.js": "/static/js/453.6264690d.chunk.js",
-    "static/media/bg-loop.gif": "/static/media/bg-loop.614b78cce3df171ebb16.gif",
     "static/media/logo.png": "/static/media/logo.5478cd238ed913feb425.png",
     "static/media/VisuoFind_ViewResult.png": "/static/media/VisuoFind_ViewResult.e57516520d57fa77c3c8.png",
-    "static/media/cube.gif": "/static/media/cube.7e133349d7a4d5ae7c48.gif",
     "static/media/BitcountPropSingle-VariableFont_CRSV,ELSH,ELXP,slnt,wght.ttf": "/static/media/BitcountPropSingle-VariableFont_CRSV,ELSH,ELXP,slnt,wght.98aff902da79b78ea950.ttf",
     "static/media/DodgeBlock_HowToPlay.png": "/static/media/DodgeBlock_HowToPlay.6363f039f52a02587a37.png",
     "static/media/mount-glasses.jpg": "/static/media/mount-glasses.00c5bdac474f6f41aa93.jpg",
@@ -17,6 +15,7 @@
     "static/media/DiceDuel_PlayScreen.png": "/static/media/DiceDuel_PlayScreen.e89a7ca94b0f64dbdd1d.png",
     "static/media/DiceDuel_PointLimitSetter.png": "/static/media/DiceDuel_PointLimitSetter.c474fd9700cf8e3969e7.png",
     "static/media/DiceDuel_Result.png": "/static/media/DiceDuel_Result.d7fb04aca9252fd7d3cf.png",
+    "static/media/background-gif2.gif": "/static/media/background-gif2.a7f101e21e098b0c95c8.gif",
     "static/media/VisuoFind_Home.png": "/static/media/VisuoFind_Home.c865b9436534f66f17b7.png",
     "static/media/DodgeBlock_Home.png": "/static/media/DodgeBlock_Home.6add3b2f7c1caed092e1.png",
     "static/media/DodgeBlock_GamePlay.png": "/static/media/DodgeBlock_GamePlay.847f0008dc6267400488.png",
@@ -31,13 +30,14 @@
     "static/media/BloodWorks_BloodBank.jpg": "/static/media/BloodWorks_BloodBank.da2d5d3dc334c57d1447.jpg",
     "static/media/BloodWorks_Home.jpg": "/static/media/BloodWorks_Home.4ea7a5e155094472fe12.jpg",
     "static/media/hi.gif": "/static/media/hi.79bce947eb8ded855193.gif",
+    "static/media/background-gif7.gif": "/static/media/background-gif7.ba13387192bce02578bd.gif",
     "index.html": "/index.html",
-    "main.dad7ea83.css.map": "/static/css/main.dad7ea83.css.map",
-    "main.2cb876cb.js.map": "/static/js/main.2cb876cb.js.map",
+    "main.2b219e9d.css.map": "/static/css/main.2b219e9d.css.map",
+    "main.684e1de4.js.map": "/static/js/main.684e1de4.js.map",
     "453.6264690d.chunk.js.map": "/static/js/453.6264690d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.dad7ea83.css",
-    "static/js/main.2cb876cb.js"
+    "static/css/main.2b219e9d.css",
+    "static/js/main.684e1de4.js"
   ]
 }
