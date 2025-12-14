@@ -67,11 +67,12 @@ const allProjects = [
     name: "Lets Quiz",
     desc: "Lets Quiz is a complete quiz-management platform where admins can create quizzes, rounds, questions, and teams, while assigned Quiz Masters can host the game in real time. The system supports multiple round types including General (MCQ), Subjective (category-based), Rapid Fire (timed question streaks), Estimation (teams provide numerical estimates), and Buzzer (fastest buzz gets to answer). It also provides detailed quiz history, team performance tracking, and admin-level monitoring for smooth event execution.",
 
-    pdf: "/pdf/MerchVault.pdf",
+    // pdf: "/pdf/MerchVault.pdf",
     img: [sampleImg],
     tags: ["HTML", "CSS", "React.js", "Node.js", "MongoDB"],
     type: "web",
   },
+
   {
     name: "MerchVault",
     desc: "MerchVault is an e-commerce platform for selling apparel such as t-shirts, hoodies, posters, and more. Users can customize products with graphics or text, and creators can upload and sell their own designs on the marketplace.",
@@ -170,12 +171,16 @@ const Projects = () => {
               >
                 <span>Play Demo</span>→
               </button>
-            ) : (
+            ) : project.pdf ? (
               <button
                 className="project-overlay-btn"
                 onClick={() => window.open(project.pdf, "_blank")}
               >
                 <span>View Report </span> →
+              </button>
+            ) : (
+              <button className="project-still-btn">
+                <span>Still in Production</span>
               </button>
             )}
           </div>

@@ -95,7 +95,7 @@ const ResetGame = () => {
   buttonCont.style.display = "block";
 
   // Reset highest score display
-  document.querySelector(".highest-score").textContent = `Highest Score: 0`;
+  // document.querySelector(".highest-score").textContent = `Highest Score: 0`;
 
   console.log("Game has been reset");
 };
