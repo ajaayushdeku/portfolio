@@ -16,6 +16,12 @@ import diceduel5 from "../asset/images/Dice_Duel/DiceDuel_GamePlay2.png";
 import diceduel3 from "../asset/images/Dice_Duel/DiceDuel_PlayScreen.png";
 import diceduel6 from "../asset/images/Dice_Duel/DiceDuel_Result.png";
 
+import numguesser1 from "../asset/images/Num_Guesser/Num_Guesser_PlayScreen.png";
+import numguesser2 from "../asset/images/Num_Guesser/Num_Guesser_GamePlay.png";
+import numguesser3 from "../asset/images/Num_Guesser/Num_Guesser_HintLower.png";
+import numguesser4 from "../asset/images/Num_Guesser/Num_Guesser_HintHigher.png";
+import numguesser5 from "../asset/images/Num_Guesser/Num_Guesser_CorrectGuess.png";
+
 import merchVault1 from "../asset/images/MerchVault/MerchVault_Home.jpg";
 import merchVault2 from "../asset/images/MerchVault/MerchVault_Customize.jpg";
 import merchVault3 from "../asset/images/MerchVault/MerchVault_Artist.jpg";
@@ -44,6 +50,15 @@ const allProjects = [
     desc: "Dice Duel is an interactive two-player game where players take turns rolling a dice, accumulating points, and competing to reach the maximum score first. Built with HTML, CSS, and JavaScript, it features dynamic score tracking, progress bars, and a gaming-inspired UI.",
     demo: "/projects/Dice%20Game/dice-game.html",
     img: [diceduel1, diceduel2, diceduel3, diceduel4, diceduel5, diceduel6],
+    tags: ["HTML", "CSS", "JavaScript"],
+    type: "game",
+  },
+
+  {
+    name: "Num Guesser",
+    desc: "Num Guesser is an engaging number guessing game where players try to guess a randomly generated number. It features real-time hints, a high-score tracker, dynamic input validation, and a playful UI with colorful feedback. Built with HTML, CSS, and JavaScript for a fun and interactive experience.",
+    demo: "/projects/Num%20Guesser/num-guesser.html",
+    img: [numguesser1, numguesser2, numguesser3, numguesser4, numguesser5],
     tags: ["HTML", "CSS", "JavaScript"],
     type: "game",
   },

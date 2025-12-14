@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Num Guesser</title>
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="num-guesser-style.css" />
+  </head>
+
+  <body>
+    <section class="game-container">
+      <h1>🎯 Guess The Number</h1>
+
+      <p class="high-score">
+        High Score: <span>(least tries)</span>
+        <strong id="highScore">--</strong>
+      </p>
+
+      <div class="number-box" id="secretNumber">?</div>
+
+      <div class="para-container">
+        <p class="hint" id="hint">Hint: Start guessing...</p>
+
+        <p class="number-of-guess">Number of Guesses: --</p>
+      </div>
+
+      <form id="guessForm">
+        <input
+          type="number"
+          id="user-answer"
+          class="guess-input"
+          placeholder="Enter your guess"
+        />
+        <button class="btn submit-btn">Submit</button>
+      </form>
+
+      <div class="button-group">
+        <button class="btn play-btn">Play</button>
+        <button class="btn replay-btn">Replay</button>
+      </div>
+    </section>
+
+    <script src="num-guesser-script.js"></script>
+  </body>
+</html>
