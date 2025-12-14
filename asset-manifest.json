@@ -1,14 +1,19 @@
 {
   "files": {
     "main.css": "/static/css/main.08cd4db3.css",
-    "main.js": "/static/js/main.a7702aac.js",
+    "main.js": "/static/js/main.c9348ca6.js",
     "static/js/453.6264690d.chunk.js": "/static/js/453.6264690d.chunk.js",
     "static/media/bggg.gif": "/static/media/bggg.09fb9f3805000938643c.gif",
     "static/media/logo.png": "/static/media/logo.5478cd238ed913feb425.png",
     "static/media/VisuoFind_ViewResult.png": "/static/media/VisuoFind_ViewResult.e57516520d57fa77c3c8.png",
     "static/media/BitcountPropSingle-VariableFont_CRSV,ELSH,ELXP,slnt,wght.ttf": "/static/media/BitcountPropSingle-VariableFont_CRSV,ELSH,ELXP,slnt,wght.98aff902da79b78ea950.ttf",
     "static/media/DodgeBlock_HowToPlay.png": "/static/media/DodgeBlock_HowToPlay.6363f039f52a02587a37.png",
+    "static/media/Num_Guesser_HintLower.png": "/static/media/Num_Guesser_HintLower.e9dd691d57bcdf80a6b2.png",
     "static/media/mount-glasses.jpg": "/static/media/mount-glasses.00c5bdac474f6f41aa93.jpg",
+    "static/media/Num_Guesser_HintHigher.png": "/static/media/Num_Guesser_HintHigher.5028129f91d21a21b31d.png",
+    "static/media/Num_Guesser_GamePlay.png": "/static/media/Num_Guesser_GamePlay.ef198ec873beb5ef8669.png",
+    "static/media/Num_Guesser_PlayScreen.png": "/static/media/Num_Guesser_PlayScreen.fc398aba42594f5695fb.png",
+    "static/media/Num_Guesser_CorrectGuess.png": "/static/media/Num_Guesser_CorrectGuess.91d8f33c16273ed8ac8b.png",
     "static/media/VisuoFind_SearchBox.png": "/static/media/VisuoFind_SearchBox.4c552ff70e9a43de5032.png",
     "static/media/DiceDuel_GamePlay2.png": "/static/media/DiceDuel_GamePlay2.d5d0f6adb6b08b689c7c.png",
     "static/media/DiceDuel_GamePlay1.png": "/static/media/DiceDuel_GamePlay1.82e71001470992a0bda2.png",
@@ -35,11 +40,11 @@
     "static/media/background-gif7.gif": "/static/media/background-gif7.ba13387192bce02578bd.gif",
     "index.html": "/index.html",
     "main.08cd4db3.css.map": "/static/css/main.08cd4db3.css.map",
-    "main.a7702aac.js.map": "/static/js/main.a7702aac.js.map",
+    "main.c9348ca6.js.map": "/static/js/main.c9348ca6.js.map",
     "453.6264690d.chunk.js.map": "/static/js/453.6264690d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.08cd4db3.css",
-    "static/js/main.a7702aac.js"
+    "static/js/main.c9348ca6.js"
   ]
 }
