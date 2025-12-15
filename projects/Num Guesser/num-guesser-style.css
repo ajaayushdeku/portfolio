@@ -90,14 +90,17 @@ body {
   color: #417cfc;
 }
 
-#guessForm {
+#guessForm,
+#rangeForm {
   display: flex;
   gap: 1rem;
   justify-content: center;
+  align-items: center;
   margin-bottom: 1.5rem;
 }
 
-.guess-input {
+.guess-input,
+.range-input {
   flex: 2;
   padding: 0.75rem;
   border-radius: 12px;
@@ -112,12 +115,20 @@ body {
   margin-right: 1rem;
 }
 
-.guess-input:focus {
+.range-input {
+  padding: 0.3rem;
+  width: 10px;
+  margin-right: 0rem;
+}
+
+.guess-input:focus,
+.range-input:focus {
   border: 2px solid #38bdf8;
   box-shadow: 0 0 8px rgba(56, 189, 248, 0.5);
 }
 
-.guess-input::placeholder {
+.guess-input::placeholder,
+.range-input::placeholder {
   color: #64748b;
 }
 
@@ -145,6 +156,18 @@ body {
 }
 
 .submit-btn:hover {
+  background: #efefef;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 255, 255, 0.5);
+}
+
+.limit-submit-btn {
+  background-color: white;
+  font-size: 0.8rem;
+  padding: 0.3rem;
+}
+
+.limit-submit-btn:hover {
   background: #efefef;
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(255, 255, 255, 0.5);
