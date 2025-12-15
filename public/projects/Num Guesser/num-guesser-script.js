@@ -1,24 +1,34 @@
 const guessForm = document.getElementById("guessForm");
 const guessInput = document.getElementById("user-answer");
+
+const headingEl = document.getElementById("heading");
+
+const rangeForm = document.getElementById("rangeForm");
+const rangeLowerInput = document.getElementById("user-lower-range");
+const rangeUpperInput = document.getElementById("user-upper-range");
+
 const hintText = document.querySelector(".hint");
 const secretNumberEl = document.getElementById("secretNumber");
 const numOfGuess = document.querySelector(".number-of-guess");
 const replayButtonEl = document.querySelector(".replay-btn");
 const playButtonEl = document.querySelector(".play-btn");
 
+let rangeLowerLimit = 0;
+let rangeUpperLimit = 20;
+
 // Initial UI state
 replayButtonEl.style.display = "none";
 guessForm.style.display = "none";
 
 // Generate random number (1–20)
-const generateRandomNumber = () => {
-  const randomNumber = Math.floor(Math.random() * 20) + 1;
+const generateRandomNumber = (min, max) => {
+  const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
   console.log("Random Number:", randomNumber);
   return randomNumber;
 };
 
 // Game state
-let secretNumber = generateRandomNumber();
+let secretNumber = 0;
 let guessCount = 0;
 let highScore = 0;
 
@@ -49,7 +59,7 @@ playButtonEl.addEventListener("click", handlePlay);
 
 // Replay button handler
 const handleReplay = () => {
-  secretNumber = generateRandomNumber();
+  secretNumber = generateRandomNumber(rangeLowerLimit, rangeUpperLimit);
   guessForm.style.display = "block";
   numOfGuess.style.display = "block";
   updateHint("Hint: Start guessing...");
@@ -89,4 +99,26 @@ guessForm.addEventListener("submit", (e) => {
   // Reset input
   guessInput.value = "";
   guessInput.focus();
+});
+
+rangeForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const newLowerLimit = Number(rangeLowerInput.value);
+  const newUpperLimit = Number(rangeUpperInput.value);
+
+  rangeLowerLimit = newLowerLimit;
+  rangeUpperLimit = newUpperLimit;
+
+  headingEl.textContent = `🎯 Guess The Number (${rangeLowerLimit} to ${rangeUpperLimit})`;
+
+  secretNumber = generateRandomNumber(rangeLowerLimit, rangeUpperLimit);
+
+  console.log(`🎯 Guess The Number (${rangeLowerLimit} to ${rangeUpperLimit})`);
+
+  // Reset input
+  rangeLowerInput.value = "";
+  rangeUpperInput.value = "";
+  rangeLowerInput.focus();
+  rangeUpperInput.focus();
 });

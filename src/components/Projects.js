@@ -36,6 +36,7 @@ import "../styles/Projects.css";
 import sampleImg from "../asset/bggg.gif";
 
 import judgegy from "../asset/background-gif7.gif";
+
 const allProjects = [
   {
     name: "Dodge Block",
@@ -53,7 +54,6 @@ const allProjects = [
     tags: ["HTML", "CSS", "JavaScript"],
     type: "game",
   },
-
   {
     name: "Num Guesser",
     desc: "Num Guesser is an engaging number guessing game where players try to guess a randomly generated number. It features real-time hints, a high-score tracker, dynamic input validation, and a playful UI with colorful feedback. Built with HTML, CSS, and JavaScript for a fun and interactive experience.",
@@ -62,17 +62,13 @@ const allProjects = [
     tags: ["HTML", "CSS", "JavaScript"],
     type: "game",
   },
-
   {
     name: "Lets Quiz",
     desc: "Lets Quiz is a complete quiz-management platform where admins can create quizzes, rounds, questions, and teams, while assigned Quiz Masters can host the game in real time. The system supports multiple round types including General (MCQ), Subjective (category-based), Rapid Fire (timed question streaks), Estimation (teams provide numerical estimates), and Buzzer (fastest buzz gets to answer). It also provides detailed quiz history, team performance tracking, and admin-level monitoring for smooth event execution.",
-
-    // pdf: "/pdf/MerchVault.pdf",
     img: [sampleImg],
     tags: ["HTML", "CSS", "React.js", "Node.js", "MongoDB"],
     type: "web",
   },
-
   {
     name: "MerchVault",
     desc: "MerchVault is an e-commerce platform for selling apparel such as t-shirts, hoodies, posters, and more. Users can customize products with graphics or text, and creators can upload and sell their own designs on the marketplace.",
@@ -111,7 +107,6 @@ const tagStyles = {
   Python: { bg: "#3474a8", shadow: "#225785", color: "#ffcf3d" },
   "Node.js": { bg: "#69a164", shadow: "#4a7350", color: "#323330" },
   PHP: { bg: "#7b7fb5", shadow: "#666a9ece", color: "#323330" },
-
   MySQL: { bg: "#004463", shadow: "#002e44", color: "#e07014" },
   "Spring Boot": { bg: "#6db53e", shadow: "#4c822a", color: "#ffffff" },
   PostgreSQL: { bg: "#3a6b94", shadow: "#2a4d6d", color: "#ffffff" },
@@ -144,50 +139,70 @@ const Projects = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const ProjectCard = ({ project, index }) => {
-    return (
-      <div
-        className="project-card"
-        style={{
-          animationDelay: `${index * 0.1}s`,
-        }}
-      >
-        <div className="project-img-container">
-          {project.img.map((img, idx) => (
-            <img
-              key={idx}
-              src={img}
-              alt={project.name}
-              className={idx === imageIndices[project.name] ? "active" : ""}
-            />
-          ))}
+  const ProjectCard = ({ project }) => {
+    const currentIndex = imageIndices[project.name];
 
-          <div className="project-overlay">
-            <h3 className="project-overlay-title">{project.name}</h3>
-            {project.demo ? (
-              <button
-                className="project-overlay-btn"
-                onClick={() => window.open(project.demo, "_blank")}
-              >
-                <span>Play Demo</span>→
-              </button>
-            ) : project.pdf ? (
-              <button
-                className="project-overlay-btn"
-                onClick={() => window.open(project.pdf, "_blank")}
-              >
-                <span>View Report </span> →
-              </button>
-            ) : (
-              <button className="project-still-btn">
-                <span>Still in Production</span>
-              </button>
-            )}
+    return (
+      <div className="project-card">
+        {/* Image Container */}
+        <div className="project-img-container">
+          <div className="project-img">
+            {project.img.map((img, idx) => (
+              <img
+                key={idx}
+                src={img}
+                alt={`${project.name} screenshot ${idx + 1}`}
+                className={idx === currentIndex ? "active" : ""}
+              />
+            ))}
           </div>
+
+          {/* Image Indicators */}
+          {project.img.length > 1 && (
+            <div className="image-indicators">
+              {project.img.map((_, idx) => (
+                <div
+                  key={idx}
+                  className={`indicator-dot ${
+                    idx === currentIndex ? "active" : ""
+                  }`}
+                />
+              ))}
+            </div>
+          )}
         </div>
 
+        {/* Content Section */}
         <div className="project-content">
-          <h3 className="project-name">{project.name}</h3>
+          <div className="project-header">
+            <h3 className="project-name">{project.name}</h3>
+            {/* <span className="project-type-badge">
+              {project.type === "game" ? "🎮 Game" : "💻 Web"}
+            </span> */}
+
+            <div className="project-action">
+              {project.demo ? (
+                <button
+                  className="project-btn project-overlay-btn"
+                  onClick={() => window.open(project.demo, "_blank")}
+                >
+                  <span>🎮 Play Demo</span>→
+                </button>
+              ) : project.pdf ? (
+                <button
+                  className="project-btn project-overlay-btn"
+                  onClick={() => window.open(project.pdf, "_blank")}
+                >
+                  <span>💻 View Report</span>→
+                </button>
+              ) : (
+                <button className="project-btn project-still-btn">
+                  <span>🥶 Still in Production</span>
+                </button>
+              )}
+            </div>
+          </div>
+
           <p className="project-description">{project.desc}</p>
 
           <div className="project-tags">
@@ -232,8 +247,8 @@ const Projects = () => {
           <h2>💻 Web Applications</h2>
         </div>
         <div className="projects-grid">
-          {webProjects.map((project, index) => (
-            <ProjectCard key={project.name} project={project} index={index} />
+          {webProjects.map((project) => (
+            <ProjectCard key={project.name} project={project} />
           ))}
         </div>
       </div>
@@ -245,8 +260,8 @@ const Projects = () => {
           <img src={judgegy} alt="judgegy" className="judgegy" />
         </div>
         <div className="projects-grid">
-          {gameProjects.map((project, index) => (
-            <ProjectCard key={project.name} project={project} index={index} />
+          {gameProjects.map((project) => (
+            <ProjectCard key={project.name} project={project} />
           ))}
         </div>
       </div>

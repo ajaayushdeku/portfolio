@@ -15,7 +15,24 @@
 
   <body>
     <section class="game-container">
-      <h1>🎯 Guess The Number</h1>
+      <h1 id="heading">🎯 Guess The Number (1 to 20)</h1>
+
+      <form id="rangeForm">
+        <input
+          type="number"
+          id="user-lower-range"
+          class="range-input"
+          placeholder="Lower Limit"
+        />
+        <h3>To</h3>
+        <input
+          type="number"
+          id="user-upper-range"
+          class="range-input"
+          placeholder="Upper Limit"
+        />
+        <button class="btn limit-submit-btn">Submit</button>
+      </form>
 
       <p class="high-score">
         High Score: <span>(least tries)</span>
