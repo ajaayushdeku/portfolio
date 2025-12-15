@@ -30,7 +30,7 @@
   --footer-bg: #181818;
   --footer-text-color: #ffffff;
 
-  --theme-toggle-btn-bg: #f5efcf;
+  --theme-toggle-btn-bg: #f7f7f7;
   --theme-toggle-text: #121212;
 
   --input-field-bg: #2a2a2a;
@@ -69,13 +69,13 @@
   --button-hover: rgba(0, 0, 0, 0.05);
 
   /* Navbar + Footer */
-  --navbar-bg: linear-gradient(90deg, #ffffff, #f7f7f7);
+  --navbar-bg: #f7f7f7;
   --footer-bg: #2d2c24;
   --footer-text-color: #ffffff;
 
   /* Theme toggle */
-  --theme-toggle-text: #222222;
-  --theme-toggle-btn-bg: #f7f7f7;
+  --theme-toggle-text: #f7f7f7;
+  --theme-toggle-btn-bg: #222222;
 
   /* Input fields */
   --input-field-bg: #ffffff;
@@ -252,6 +252,29 @@ nav .nav-container .theme-toggle-button:hover div {
   transition: all 0.3s;
 }
 
+/* Section Divider */
+.portfolio-section-divider {
+  display: flex;
+  align-items: center;
+  margin: 80px 0 50px;
+  gap: 20px;
+}
+
+.portfolio-section-divider h2 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--text-color);
+  white-space: nowrap;
+}
+
+.portfolio-section-divider::after {
+  content: "";
+  flex: 1;
+  height: 3px;
+  background: linear-gradient(270deg, #667eea 0%, transparent 100%);
+  border-radius: 10px;
+}
+
 /* ================== SECTIONS ================== */
 section {
   padding: 3rem 0px;
@@ -310,7 +333,7 @@ section {
   border: 2px solid var(--text-color);
   border-radius: 20px;
   padding: 0.3rem 1rem;
-  background: var(--theme-toggle-btn-bg);
+  background: var(--text-color);
   color: var(--theme-toggle-text);
   width: fit-content;
   font-weight: 600;

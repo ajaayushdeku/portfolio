@@ -1,10 +1,34 @@
-import React from "react";
+import React, { useRef } from "react";
 import { FiMapPin } from "react-icons/fi";
 import { LuPhone } from "react-icons/lu";
 import { MdOutlineMailOutline } from "react-icons/md";
+import emailjs from "emailjs-com";
 import "../styles/Contact.css";
 
 const Contact = () => {
+  const formRef = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_79ma28b", // Your EmailJS service ID
+        "template_upvnpv8", // Your EmailJS template ID
+        formRef.current,
+        "bH5QW9n4OlfGwUGE6" // Your EmailJS public key
+      )
+      .then(
+        () => {
+          alert("Message sent successfully!");
+          e.target.reset();
+        },
+        () => {
+          alert("Failed to send message.");
+        }
+      );
+  };
+
   const contactDetails = [
     {
       icon: <FiMapPin size={22} />,
@@ -48,24 +72,47 @@ const Contact = () => {
 
         {/* Right Column: Contact Form */}
         <div className="contact-right">
-          <form className="contact-form">
+          <form ref={formRef} className="contact-form" onSubmit={sendEmail}>
             <div className="form-row">
               <label>Name:</label>
-              <input type="email" placeholder="Enter Your Email" required />
+              <input
+                type="text"
+                name="name" // Matches {{name}} in your template
+                placeholder="Enter Your Name"
+                required
+              />
             </div>
 
             <div className="form-row">
-              <label>E-mail</label>
-              <input type="email" placeholder="Enter Your Email" required />
+              <label>Subject:</label>
+              <input
+                type="text"
+                name="subject" // Optional, if you want to pass email separately
+                placeholder="Enter Your Subject"
+                required
+              />
             </div>
+
             <div className="form-row">
-              <label>Message</label>
+              <label>Email:</label>
+              <input
+                type="email"
+                name="email" // Optional, if you want to pass email separately
+                placeholder="Enter Your Email"
+                required
+              />
+            </div>
+
+            <div className="form-row">
+              <label>Message:</label>
               <textarea
+                name="message" // Matches {{message}} in your template
                 placeholder="Enter Your Message"
                 rows="5"
                 required
               ></textarea>
             </div>
+
             <button type="submit">Send Message</button>
           </form>
         </div>

@@ -17,21 +17,32 @@ function App() {
         <Hero />
       </section>
 
+      {/* <div className="portfolio-section-divider"></div> */}
+
       <section id="skills">
         <Skills />
       </section>
+
+      {/* <div className="portfolio-section-divider"></div> */}
 
       <section id="achievements">
         <Achievements />
       </section>
 
+      {/* <div className="portfolio-section-divider"></div> */}
+
       <section id="projects">
         <Projects />
       </section>
 
+      {/* <div className="portfolio-section-divider"></div> */}
+
       <section id="contact">
         <Contact />
       </section>
+      {/* <h1>service_79ma28b</h1>
+      <h1>template_wreu0bf</h1>
+      <h1>bH5QW9n4OlfGwUGE6</h1> */}
 
       <Footer />
     </div>
