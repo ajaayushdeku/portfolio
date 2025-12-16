@@ -7,7 +7,7 @@ import { AiFillHome, AiOutlineProject } from "react-icons/ai";
 import { FaUserGraduate, FaTools } from "react-icons/fa";
 import { MdContacts } from "react-icons/md";
 import logo from "../asset/logo.png";
-import hi from "../asset/hi.gif";
+import hi from "../asset/welcome_gif.gif";
 
 const Navbar = () => {
   const [theme, setTheme] = useState("dark");

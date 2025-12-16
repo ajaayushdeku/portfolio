@@ -435,7 +435,6 @@
 .project-description::-webkit-scrollbar {
   display: none;
 }
-
 /* Tags Section */
 .project-tags {
   display: flex;
@@ -444,17 +443,22 @@
   margin-bottom: 20px;
 }
 
-.tag {
+.project-card .tags span,
+.project-tags span {
+  background: #c5d7f9;
+  color: #ffffff;
+
   padding: 6px 16px;
   border-radius: 50px;
   font-size: 0.8rem;
   font-weight: 650;
-  transition: transform 0.2s ease;
   cursor: default;
+  transition: all 0.3s;
 }
 
-.tag:hover {
-  transform: translateY(-2px);
+.project-tags span:hover {
+  transform: translateX(-4px);
+  filter: drop-shadow(3px 3px 0px var(--shadow-color));
 }
 
 /* Action Button */

@@ -239,6 +239,7 @@ const Projects = () => {
                     backgroundColor: tagStyle.bg,
                     color: tagStyle.color,
                     boxShadow: `0 2px 8px ${tagStyle.shadow}40`,
+                    "--shadow-color": tagStyle.shadow,
                   }}
                 >
                   {tag}
