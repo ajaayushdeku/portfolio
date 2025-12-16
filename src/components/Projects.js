@@ -22,6 +22,13 @@ import numguesser3 from "../asset/images/Num_Guesser/Num_Guesser_HintLower.png";
 import numguesser4 from "../asset/images/Num_Guesser/Num_Guesser_HintHigher.png";
 import numguesser5 from "../asset/images/Num_Guesser/Num_Guesser_CorrectGuess.png";
 
+import tictactoe1 from "../asset/images/Tic_Tac_Toe/TicTacToe_PlayScreen.png";
+import tictactoe2 from "../asset/images/Tic_Tac_Toe/TicTacToe_GameStart.png";
+import tictactoe3 from "../asset/images/Tic_Tac_Toe/TicTacToe_XTurn.png";
+import tictactoe4 from "../asset/images/Tic_Tac_Toe/TicTacToe_OTurn.png";
+import tictactoe5 from "../asset/images/Tic_Tac_Toe/TicTacToe_WinCase.png";
+import tictactoe6 from "../asset/images/Tic_Tac_Toe/TicTacToe_TieCase.png";
+
 import merchVault1 from "../asset/images/MerchVault/MerchVault_Home.jpg";
 import merchVault2 from "../asset/images/MerchVault/MerchVault_Customize.jpg";
 import merchVault3 from "../asset/images/MerchVault/MerchVault_Artist.jpg";
@@ -59,6 +66,22 @@ const allProjects = [
     desc: "Num Guesser is an engaging number guessing game where players try to guess a randomly generated number. It features real-time hints, a high-score tracker, dynamic input validation, and a playful UI with colorful feedback. Built with HTML, CSS, and JavaScript for a fun and interactive experience.",
     demo: "/projects/Num%20Guesser/num-guesser.html",
     img: [numguesser1, numguesser2, numguesser3, numguesser4, numguesser5],
+    tags: ["HTML", "CSS", "JavaScript"],
+    type: "game",
+  },
+
+  {
+    name: "Tic Tac Toe",
+    desc: "Tic Tac Toe is an interactive two-player game where players take turns placing X and O on a 3x3 grid. It features turn-based gameplay, win detection with highlighted winning cells, tie detection, and a replay option. Built with HTML, CSS, and JavaScript, it offers a responsive and engaging UI for a fun gaming experience.",
+    demo: "/projects/Tic%20Tac%20Toe/tic-tac-toe.html",
+    img: [
+      tictactoe1,
+      tictactoe2,
+      tictactoe3,
+      tictactoe4,
+      tictactoe5,
+      tictactoe6,
+    ],
     tags: ["HTML", "CSS", "JavaScript"],
     type: "game",
   },

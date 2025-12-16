@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="tic-tac-toe-style.css" />
+  </head>
+
+  <body>
+    <section>
+      <h1 class="heading">❌ Tic Tac Toe ⭕</h1>
+
+      <h2 class="info">Player "X" Turn</h2>
+
+      <div class="board">
+        <div class="cell" data-row="0" data-col="0" id="cell-1"></div>
+        <div class="cell" data-row="0" data-col="1" id="cell-2"></div>
+        <div class="cell" data-row="0" data-col="2" id="cell-3"></div>
+
+        <div class="cell" data-row="1" data-col="0" id="cell-4"></div>
+        <div class="cell" data-row="1" data-col="1" id="cell-5"></div>
+        <div class="cell" data-row="1" data-col="2" id="cell-6"></div>
+
+        <div class="cell" data-row="2" data-col="0" id="cell-7"></div>
+        <div class="cell" data-row="2" data-col="1" id="cell-8"></div>
+        <div class="cell" data-row="2" data-col="2" id="cell-9"></div>
+      </div>
+
+      <div class="players">
+        <div>Player 1 (X)</div>
+        <div>Player 2 (O)</div>
+      </div>
+
+      <div class="actions">
+        <button class="btn play-btn">Play</button>
+        <button class="btn secondary replay-btn">Replay</button>
+      </div>
+    </section>
+
+    <script src="tic-tac-toe-script.js"></script>
+  </body>
+</html>
