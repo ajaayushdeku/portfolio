@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.109e0c58.css",
-    "main.js": "/static/js/main.e7fd2e16.js",
+    "main.css": "/static/css/main.736cc6e0.css",
+    "main.js": "/static/js/main.4ceab899.js",
     "static/js/453.ac9b7e2a.chunk.js": "/static/js/453.ac9b7e2a.chunk.js",
     "static/media/bggg.gif": "/static/media/bggg.09fb9f3805000938643c.gif",
     "static/media/logo.png": "/static/media/logo.5478cd238ed913feb425.png",
@@ -23,6 +23,7 @@
     "static/media/DiceDuel_Result.png": "/static/media/DiceDuel_Result.d7fb04aca9252fd7d3cf.png",
     "static/media/VisuoFind_Home.png": "/static/media/VisuoFind_Home.c865b9436534f66f17b7.png",
     "static/media/DodgeBlock_Home.png": "/static/media/DodgeBlock_Home.6add3b2f7c1caed092e1.png",
+    "static/media/welcome_gif.gif": "/static/media/welcome_gif.9b37ee291da538cb0f68.gif",
     "static/media/background-gif2-1.gif": "/static/media/background-gif2-1.a6fc585830d824ae06f5.gif",
     "static/media/background-gif2-2.gif": "/static/media/background-gif2-2.cad47677259735634628.gif",
     "static/media/DodgeBlock_GamePlay.png": "/static/media/DodgeBlock_GamePlay.847f0008dc6267400488.png",
@@ -42,15 +43,14 @@
     "static/media/TicTacToe_XTurn.png": "/static/media/TicTacToe_XTurn.f4a62c74bb292f03cb45.png",
     "static/media/TicTacToe_GameStart.png": "/static/media/TicTacToe_GameStart.3b601aff19b9b6a8361f.png",
     "static/media/TicTacToe_PlayScreen.png": "/static/media/TicTacToe_PlayScreen.7038a71614757c7dc3f1.png",
-    "static/media/hi.gif": "/static/media/hi.79bce947eb8ded855193.gif",
     "static/media/background-gif7.gif": "/static/media/background-gif7.ba13387192bce02578bd.gif",
     "index.html": "/index.html",
-    "main.109e0c58.css.map": "/static/css/main.109e0c58.css.map",
-    "main.e7fd2e16.js.map": "/static/js/main.e7fd2e16.js.map",
+    "main.736cc6e0.css.map": "/static/css/main.736cc6e0.css.map",
+    "main.4ceab899.js.map": "/static/js/main.4ceab899.js.map",
     "453.ac9b7e2a.chunk.js.map": "/static/js/453.ac9b7e2a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.109e0c58.css",
-    "static/js/main.e7fd2e16.js"
+    "static/css/main.736cc6e0.css",
+    "static/js/main.4ceab899.js"
   ]
 }
