@@ -470,6 +470,10 @@ section {
 }
 
 @media (max-width: 480px) {
+  .hero-about-container {
+    margin-top: 4rem;
+  }
+
   .hero-about-left h1 {
     font-size: 2rem;
   }
@@ -479,8 +483,12 @@ section {
   }
 
   .hero-image-container {
-    width: 220px;
-    height: 220px;
+    width: 200px;
+    height: 200px;
+  }
+
+  nav .nav-links li a {
+    margin-left: 2rem;
   }
 }
 
@@ -713,6 +721,47 @@ footer {
 
 /* ================= MOBILE VIEW ================= */
 @media (max-width: 600px) {
+  .hamburger-btn {
+    display: block;
+  }
+
+  .nav-logo {
+    top: 0.2rem;
+    width: 3rem;
+
+    left: 4rem;
+  }
+
+  .nav-welcome {
+    display: none;
+  }
+
+  .nav-right {
+    border-left: 2px solid rgba(255, 255, 255, 0);
+    padding-left: 2rem;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 40%;
+    height: 100vh;
+
+    background: var(--navbar-bg);
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0rem;
+    gap: 1.5rem;
+
+    transform: translateX(100%);
+    transition: 0.3s ease-in-out;
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+  }
+
   /* 3-column layout */
   .skills-grid {
     display: grid;
