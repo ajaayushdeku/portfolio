@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.736cc6e0.css",
+    "main.css": "/static/css/main.c4499f1e.css",
     "main.js": "/static/js/main.6538ad4e.js",
     "static/js/453.ac9b7e2a.chunk.js": "/static/js/453.ac9b7e2a.chunk.js",
     "static/media/bggg.gif": "/static/media/bggg.09fb9f3805000938643c.gif",
@@ -55,12 +55,12 @@
     "static/media/Rock_Paper_Scissor_PVP_Score.png": "/static/media/Rock_Paper_Scissor_PVP_Score.a153c1a3490657580c64.png",
     "static/media/background-gif7.gif": "/static/media/background-gif7.ba13387192bce02578bd.gif",
     "index.html": "/index.html",
-    "main.736cc6e0.css.map": "/static/css/main.736cc6e0.css.map",
+    "main.c4499f1e.css.map": "/static/css/main.c4499f1e.css.map",
     "main.6538ad4e.js.map": "/static/js/main.6538ad4e.js.map",
     "453.ac9b7e2a.chunk.js.map": "/static/js/453.ac9b7e2a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.736cc6e0.css",
+    "static/css/main.c4499f1e.css",
     "static/js/main.6538ad4e.js"
   ]
 }
