@@ -53,6 +53,8 @@ const handlePlay = () => {
   guessForm.style.display = "block";
   replayButtonEl.style.display = "block";
   playButtonEl.style.display = "none";
+
+  secretNumber = generateRandomNumber(rangeLowerLimit, rangeUpperLimit);
 };
 
 playButtonEl.addEventListener("click", handlePlay);
