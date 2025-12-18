@@ -29,6 +29,17 @@ import tictactoe4 from "../asset/images/Tic_Tac_Toe/TicTacToe_OTurn.png";
 import tictactoe5 from "../asset/images/Tic_Tac_Toe/TicTacToe_WinCase.png";
 import tictactoe6 from "../asset/images/Tic_Tac_Toe/TicTacToe_TieCase.png";
 
+import rockpaperscissor1 from "../asset/images/Rock_Paper_Scissor/Rock_Paper_Scissor_PVP.png";
+import rockpaperscissor2 from "../asset/images/Rock_Paper_Scissor/Rock_Paper_Scissor_MoveChosen.png";
+import rockpaperscissor3 from "../asset/images/Rock_Paper_Scissor/Rock_Paper_Scissor_WinnerCase.png";
+import rockpaperscissor4 from "../asset/images/Rock_Paper_Scissor/Rock_Paper_Scissor_TieCase.png";
+import rockpaperscissor5 from "../asset/images/Rock_Paper_Scissor/Rock_Paper_Scissor_PVP_Score.png";
+import rockpaperscissor6 from "../asset/images/Rock_Paper_Scissor/Rock_Paper_Scissor_CVP.png";
+import rockpaperscissor7 from "../asset/images/Rock_Paper_Scissor/Rock_Paper_Scissor_CVP_PWinCase.png";
+import rockpaperscissor8 from "../asset/images/Rock_Paper_Scissor/Rock_Paper_Scissor_CVP_CWinCase.png";
+import rockpaperscissor9 from "../asset/images/Rock_Paper_Scissor/Rock_Paper_Scissor_CVP_TieCase.png";
+import rockpaperscissor10 from "../asset/images/Rock_Paper_Scissor/Rock_Paper_Scissor_CVP_Score.png";
+
 import merchVault1 from "../asset/images/MerchVault/MerchVault_Home.jpg";
 import merchVault2 from "../asset/images/MerchVault/MerchVault_Customize.jpg";
 import merchVault3 from "../asset/images/MerchVault/MerchVault_Artist.jpg";
@@ -85,6 +96,27 @@ const allProjects = [
     tags: ["HTML", "CSS", "JavaScript"],
     type: "game",
   },
+
+  {
+    name: "Rock Paper Scissor",
+    desc: "Rock Paper Scissor is a fast-paced interactive game featuring both Player vs Player and Player vs Computer modes. It includes keyboard and button controls, real-time move display, win/tie detection, score tracking, and a clean responsive UI. Built with HTML, CSS, and JavaScript for an engaging gameplay experience. For Payer 1, Press Key: R for Rock, P for Paper and S fot Stone and, For Payer 1, Press Key: ⬅️ for Rock, ⬆️ for Paper and ➡️ fot Stone ",
+    demo: "/projects/Rock%20Paper%20Scissor/rock_paper_scissor.html",
+    img: [
+      rockpaperscissor1,
+      rockpaperscissor2,
+      rockpaperscissor3,
+      rockpaperscissor4,
+      rockpaperscissor5,
+      rockpaperscissor6,
+      rockpaperscissor7,
+      rockpaperscissor8,
+      rockpaperscissor9,
+      rockpaperscissor10,
+    ],
+    tags: ["HTML", "CSS", "JavaScript"],
+    type: "game",
+  },
+
   {
     name: "Lets Quiz",
     desc: "Lets Quiz is a complete quiz-management platform where admins can create quizzes, rounds, questions, and teams, while assigned Quiz Masters can host the game in real time. The system supports multiple round types including General (MCQ), Subjective (category-based), Rapid Fire (timed question streaks), Estimation (teams provide numerical estimates), and Buzzer (fastest buzz gets to answer). It also provides detailed quiz history, team performance tracking, and admin-level monitoring for smooth event execution.",
