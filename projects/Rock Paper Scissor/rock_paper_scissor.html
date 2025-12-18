@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="rock_paper_scissor_style.css" />
+  </head>
+  <body data-mode="pvp">
+    <section class="game-wrapper">
+      <h1 class="heading">Rock🪨 Paper📃 Scissor✂️</h1>
+
+      <!-- MODE SELECTION -->
+      <div class="mode-selector">
+        <button class="mode-btn active" data-mode="pvp">
+          🙎🏻Player vs 🙎🏻‍♂️Player
+        </button>
+        <button class="mode-btn" data-mode="cpu">🖥️Computer vs 🙎🏻‍♀️Player</button>
+      </div>
+
+      <!-- SCOREBOARD -->
+      <div class="scoreboard">
+        <div class="score left">
+          <h4 class="player-name">🙎🏻Player 1</h4>
+          <span class="score-value" id="score-left">0</span>
+        </div>
+
+        <div class="score right">
+          <h4 class="player-name">🙎🏻‍♂️Player 2</h4>
+          <span class="score-value" id="score-right">0</span>
+        </div>
+      </div>
+
+      <!-- GAME AREA -->
+      <div class="game-area">
+        <!-- LEFT PLAYER / COMPUTER -->
+        <div class="player-panel-1">
+          <h3 id="left-title">🙎🏻Player 1</h3>
+          <div class="chosen-move" id="left-move">❔</div>
+
+          <div class="choices">
+            <button class="choice-p1" data-mode="rock">✊</button>
+            <button class="choice-p1" data-mode="paper">✋</button>
+            <button class="choice-p1" data-mode="scissor">✌️</button>
+          </div>
+        </div>
+
+        <!-- RESULT -->
+        <div class="result-box">
+          <p id="result-text">Choose your move</p>
+        </div>
+
+        <!-- RIGHT PLAYER / COMPUTER -->
+        <div class="player-panel-2">
+          <h3 id="right-title">🙎🏻‍♂️Player 2</h3>
+          <div class="chosen-move" id="right-move">❔</div>
+
+          <div class="choices pvp-only">
+            <button class="choice-p2" data-mode="rock">✊</button>
+            <button class="choice-p2" data-mode="paper">✋</button>
+            <button class="choice-p2" data-mode="scissor">✌️</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTROLS -->
+      <div class="controls">
+        <button id="submit-btn">Submit Move</button>
+        <button id="play-again-btn">Play Again</button>
+        <button id="reset-btn">Reset Game</button>
+      </div>
+    </section>
+
+    <script src="rock_paper_scissor_script.js"></script>
+  </body>
+</html>
