@@ -429,6 +429,10 @@ section {
     right: 0;
     bottom: 4rem;
   }
+
+  .hero-about-container {
+    margin-top: 4rem;
+  }
 }
 
 @media (max-width: 768px) {

@@ -1,0 +1,329 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #020617 0%, #0f172a 100%);
+  color: #e5e7eb;
+  font-family: system-ui, -apple-system, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(8px, 2vw, 16px);
+  padding: clamp(12px, 3vw, 24px);
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* Title */
+h1 {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  color: #47c995;
+  text-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+  margin-bottom: clamp(4px, 1vw, 8px);
+  text-transform: uppercase;
+}
+
+/* Score */
+.score {
+  font-size: clamp(1rem, 3vw, 1.3rem);
+  font-weight: 700;
+  background: linear-gradient(90deg, #cce34d, #c4e051);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.high-score {
+  font-size: clamp(1rem, 3vw, 1.3rem);
+  font-weight: 700;
+  font-weight: 700;
+  background: linear-gradient(90deg, #e3c24d, #edd155);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Game board */
+.game-board {
+  width: min(90vmin, 450px);
+  height: min(90vmin, 450px);
+  background: #0a0f1e;
+  display: grid;
+  grid-template-columns: repeat(40, 1fr);
+  grid-template-rows: repeat(40, 1fr);
+  border-radius: clamp(8px, 2vw, 16px);
+  border: 3px solid #47c995;
+  box-shadow: 0 0 30px rgba(34, 197, 94, 0.2), 0 8px 24px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Cells */
+.cell {
+  background: #111734;
+}
+
+/* Snake */
+.snake {
+  background: #47c995;
+  border-radius: 4px;
+}
+
+/* Food */
+.food {
+  background: #ef4444;
+  border-radius: 50%;
+}
+
+/* Game over overlay */
+.game-over {
+  position: absolute;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #e12047;
+  background-color: #020617cc;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.go-score {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #d1bc53;
+}
+
+/* Controls section */
+.btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(1rem, 4vw, 2rem);
+  width: 100%;
+
+  flex-wrap: wrap;
+}
+
+.controls {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #f1f5f9;
+  border: 2px solid #22c55e40;
+  padding: clamp(12px, 3vw, 16px);
+  border-radius: clamp(12px, 2vw, 16px);
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  line-height: 1.4;
+  width: 100%;
+  max-width: min(400px, 90vw);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 20px rgba(34, 197, 94, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(6px, 1.5vw, 10px);
+}
+
+.controls > div:first-child {
+  font-weight: 700;
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  margin-bottom: clamp(4px, 1vw, 8px);
+  color: #47c995;
+}
+
+/* Arrow controls container */
+.horizontal-controls,
+.vertical-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(4px, 1.5vw, 8px);
+}
+
+.horizontal-controls div,
+.vertical-controls div {
+  width: clamp(30px, 12vw, 70px);
+  height: clamp(50px, 12vw, 70px);
+  color: white;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: clamp(8px, 2vw, 12px);
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  border: 2px solid #475569;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Hover and active effects */
+.horizontal-controls div:hover,
+.vertical-controls div:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #47c995 0%, #16a34a 100%);
+  border-color: #47c995;
+  box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
+}
+
+.horizontal-controls div:active,
+.vertical-controls div:active {
+  transform: scale(0.95);
+}
+
+/* Restart button */
+button {
+  margin-top: clamp(8px, 2vw, 12px);
+  padding: clamp(10px, 2vw, 14px) clamp(20px, 4vw, 32px);
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  border-radius: clamp(8px, 2vw, 12px);
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+#play {
+  background: linear-gradient(135deg, #47c995 0%, #16a34a 100%);
+  color: #1e503e;
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+
+#replay {
+  background: linear-gradient(135deg, #c95a47 0%, #a32616 100%);
+  color: #5a1d1d;
+  box-shadow: 0 4px 12px rgba(197, 34, 34, 0.3);
+}
+
+#play:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
+  background: linear-gradient(135deg, #10c653 0%, #15803d 100%);
+  color: #9ee5cb;
+}
+
+#replay:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(197, 34, 34, 0.4);
+  background: linear-gradient(135deg, #a33016 0%, #802515 100%);
+  color: #ff9696;
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Media Queries for mobile */
+@media (max-width: 640px) {
+  body {
+    gap: clamp(6px, 2vw, 12px);
+    padding: clamp(8px, 2vw, 16px);
+  }
+
+  .btns {
+    flex-direction: column;
+    gap: clamp(1rem, 3vw, 1.5rem);
+  }
+
+  .game-board {
+    width: min(95vw, 95vmin);
+    height: min(95vw, 95vmin);
+    border-width: 2px;
+  }
+
+  .controls {
+    max-width: 95vw;
+  }
+
+  .horizontal-controls div,
+  .vertical-controls div {
+    width: clamp(55px, 15vw, 75px);
+    height: clamp(55px, 15vw, 75px);
+  }
+}
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: clamp(1.3rem, 6vw, 1.8rem);
+  }
+
+  .game-board {
+    width: min(98vw, 98vmin);
+    height: min(98vw, 98vmin);
+  }
+
+  .horizontal-controls div,
+  .vertical-controls div {
+    width: clamp(50px, 16vw, 65px);
+    height: clamp(50px, 16vw, 65px);
+    font-size: clamp(1.3rem, 5vw, 1.8rem);
+  }
+
+  button {
+    padding: clamp(8px, 2vw, 12px) clamp(16px, 4vw, 24px);
+    font-size: clamp(0.85rem, 2.5vw, 1rem);
+  }
+}
+
+/* Landscape mode on mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+  body {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 8px;
+  }
+
+  h1 {
+    width: 100%;
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+  }
+
+  .score {
+    width: 100%;
+    font-size: 1rem;
+    margin-bottom: 4px;
+  }
+
+  .game-board {
+    width: min(50vh, 45vw);
+    height: min(50vh, 45vw);
+    margin: 0;
+  }
+
+  .btns {
+    flex-direction: column;
+    gap: 1rem;
+    margin-left: 1rem;
+  }
+
+  .controls {
+    padding: 10px;
+  }
+
+  .horizontal-controls div,
+  .vertical-controls div {
+    width: 45px;
+    height: 45px;
+    font-size: 1.5rem;
+  }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 1400px) {
+  .game-board {
+    width: 500px;
+    height: 500px;
+  }
+}

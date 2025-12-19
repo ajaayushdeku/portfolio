@@ -40,6 +40,10 @@ import rockpaperscissor8 from "../asset/images/Rock_Paper_Scissor/Rock_Paper_Sci
 import rockpaperscissor9 from "../asset/images/Rock_Paper_Scissor/Rock_Paper_Scissor_CVP_TieCase.png";
 import rockpaperscissor10 from "../asset/images/Rock_Paper_Scissor/Rock_Paper_Scissor_CVP_Score.png";
 
+import snakegame1 from "../asset/images/Snake_Game/Snake_Game_PlayScreen.png";
+import snakegame2 from "../asset/images/Snake_Game/Snake_Game_GamePlay.png";
+import snakegame3 from "../asset/images/Snake_Game/Snake_Game_GameOver.png";
+
 import merchVault1 from "../asset/images/MerchVault/MerchVault_Home.jpg";
 import merchVault2 from "../asset/images/MerchVault/MerchVault_Customize.jpg";
 import merchVault3 from "../asset/images/MerchVault/MerchVault_Artist.jpg";
@@ -113,6 +117,15 @@ const allProjects = [
       rockpaperscissor9,
       rockpaperscissor10,
     ],
+    tags: ["HTML", "CSS", "JavaScript"],
+    type: "game",
+  },
+
+  {
+    name: "Snake Game",
+    desc: "Snake Game is a classic arcade-style game where the player controls a growing snake, navigating it to eat food while avoiding collisions with walls and itself. It features continuous movement, score tracking, high score storage using localStorage, and both keyboard and on-screen controls. Built with HTML, CSS, and JavaScript, it offers a responsive and engaging UI for desktop and mobile devices.",
+    demo: "/projects/Snake%20Game/snake_game.html",
+    img: [snakegame1, snakegame2, snakegame3],
     tags: ["HTML", "CSS", "JavaScript"],
     type: "game",
   },
