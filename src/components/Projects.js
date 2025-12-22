@@ -213,6 +213,14 @@ const Projects = () => {
   const gameProjects = allProjects.filter((p) => p.type === "game");
   const webProjects = allProjects.filter((p) => p.type === "web");
 
+  const [expandedProjects, setExpandedProjects] = useState({});
+
+  // Lightbox states
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxImages, setLightboxImages] = useState([]);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [lightboxProjectName, setLightboxProjectName] = useState("");
+
   useEffect(() => {
     const interval = setInterval(() => {
       setImageIndices((prev) => {
@@ -228,13 +236,64 @@ const Projects = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const toggleProject = (name) => {
+    setExpandedProjects((prev) => ({
+      ...prev,
+      [name]: !prev[name],
+    }));
+  };
+
+  // Lightbox functions
+  const openLightbox = (images, index, projectName) => {
+    setLightboxImages(images);
+    setLightboxIndex(index);
+    setLightboxProjectName(projectName);
+    setLightboxOpen(true);
+    document.body.style.overflow = "hidden"; // Prevent background scrolling
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+    document.body.style.overflow = "auto";
+  };
+
+  const nextImage = () => {
+    setLightboxIndex((prev) => (prev + 1) % lightboxImages.length);
+  };
+
+  const prevImage = () => {
+    setLightboxIndex((prev) =>
+      prev === 0 ? lightboxImages.length - 1 : prev - 1
+    );
+  };
+
+  // Keyboard navigation for lightbox
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (!lightboxOpen) return;
+
+      if (e.key === "ArrowRight") nextImage();
+      if (e.key === "ArrowLeft") prevImage();
+      if (e.key === "Escape") closeLightbox();
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [lightboxOpen, lightboxImages]);
+
   const ProjectCard = ({ project }) => {
     const currentIndex = imageIndices[project.name];
+    const isOpen = expandedProjects[project.name];
 
     return (
-      <div className="project-card">
+      <div className={`project-card ${isOpen ? "open" : "closed"}`}>
         {/* Image Container */}
-        <div className="project-img-container">
+        <div
+          className="project-img-container"
+          onClick={() => openLightbox(project.img, currentIndex, project.name)}
+          style={{ cursor: "pointer" }}
+          title="Click to view full images"
+        >
           <div className="project-img">
             {project.img.map((img, idx) => (
               <img
@@ -292,26 +351,37 @@ const Projects = () => {
             </div>
           </div>
 
-          <p className="project-description">{project.desc}</p>
+          {/* Toggle Button */}
+          <button
+            className="project-toggle-btn"
+            onClick={() => toggleProject(project.name)}
+          >
+            {isOpen ? "▲ Show Less" : "▼ Show More"}
+          </button>
 
-          <div className="project-tags">
-            {project.tags.map((tag, idx) => {
-              const tagStyle = tagStyles[tag] || tagStyles.default;
-              return (
-                <span
-                  key={idx}
-                  className="tag"
-                  style={{
-                    backgroundColor: tagStyle.bg,
-                    color: tagStyle.color,
-                    boxShadow: `0 2px 8px ${tagStyle.shadow}40`,
-                    "--shadow-color": tagStyle.shadow,
-                  }}
-                >
-                  {tag}
-                </span>
-              );
-            })}
+          {/* Dropdown Content */}
+          <div className="project-dropdown">
+            <p className="project-description">{project.desc}</p>
+
+            <div className="project-tags">
+              {project.tags.map((tag, idx) => {
+                const tagStyle = tagStyles[tag] || tagStyles.default;
+                return (
+                  <span
+                    key={idx}
+                    className="tag"
+                    style={{
+                      backgroundColor: tagStyle.bg,
+                      color: tagStyle.color,
+                      boxShadow: `0 2px 8px ${tagStyle.shadow}40`,
+                      "--shadow-color": tagStyle.shadow,
+                    }}
+                  >
+                    {tag}
+                  </span>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
@@ -355,6 +425,74 @@ const Projects = () => {
           ))}
         </div>
       </div>
+
+      {/* Lightbox Modal */}
+      {lightboxOpen && (
+        <div className="lightbox-overlay" onClick={closeLightbox}>
+          <div
+            className="lightbox-content"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button className="lightbox-close" onClick={closeLightbox}>
+              ✕
+            </button>
+
+            {/* Project Name */}
+            <div className="lightbox-header">
+              <h3>{lightboxProjectName}</h3>
+              <span className="lightbox-counter">
+                {lightboxIndex + 1} / {lightboxImages.length}
+              </span>
+            </div>
+
+            {/* Image */}
+            <div className="lightbox-image-container">
+              <img
+                src={lightboxImages[lightboxIndex]}
+                alt={`${lightboxProjectName} screenshot ${lightboxIndex + 1}`}
+              />
+            </div>
+
+            {/* Navigation Buttons */}
+            {lightboxImages.length > 1 && (
+              <>
+                <button
+                  className="lightbox-nav lightbox-prev"
+                  onClick={prevImage}
+                  title="Previous (←)"
+                >
+                  ❮
+                </button>
+                <button
+                  className="lightbox-nav lightbox-next"
+                  onClick={nextImage}
+                  title="Next (→)"
+                >
+                  ❯
+                </button>
+              </>
+            )}
+
+            {/* Thumbnail Strip */}
+            {lightboxImages.length > 1 && (
+              <div className="lightbox-thumbnails">
+                {lightboxImages.map((img, idx) => (
+                  <div
+                    key={idx}
+                    className={`lightbox-thumb ${
+                      idx === lightboxIndex ? "active" : ""
+                    }`}
+                    onClick={() => setLightboxIndex(idx)}
+                  >
+                    <img src={img} alt={`Thumbnail ${idx + 1}`} />
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </section>
   );
 };
