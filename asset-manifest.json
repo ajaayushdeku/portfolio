@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.ab044045.css",
-    "main.js": "/static/js/main.acd1c409.js",
+    "main.js": "/static/js/main.47a3c61e.js",
     "static/js/453.ac9b7e2a.chunk.js": "/static/js/453.ac9b7e2a.chunk.js",
     "static/media/bggg.gif": "/static/media/bggg.09fb9f3805000938643c.gif",
     "static/media/logo.png": "/static/media/logo.5478cd238ed913feb425.png",
@@ -43,27 +43,32 @@
     "static/media/MerchVault_Artist.jpg": "/static/media/MerchVault_Artist.017b8e65365644beaf59.jpg",
     "static/media/MerchVault_Home.jpg": "/static/media/MerchVault_Home.f749ec4526d1e621a329.jpg",
     "static/media/MerchVault_Customize.jpg": "/static/media/MerchVault_Customize.cef5c3eefd6a595ec3dc.jpg",
+    "static/media/2048_GameOver.png": "/static/media/2048_GameOver.c576f42f1418fad81e0a.png",
+    "static/media/2048_GameWon.png": "/static/media/2048_GameWon.471b819bf7a1cc228135.png",
     "static/media/TicTacToe_TieCase.png": "/static/media/TicTacToe_TieCase.7a2c8ddeb282fc21e04b.png",
     "static/media/BloodWorks_Event.jpg": "/static/media/BloodWorks_Event.47e73d80c5e07d04395d.jpg",
     "static/media/TicTacToe_WinCase.png": "/static/media/TicTacToe_WinCase.941463b0aebcfd6097ff.png",
+    "static/media/2048_GamePlay.png": "/static/media/2048_GamePlay.e4d07de26ffddd89f730.png",
     "static/media/high.jpg": "/static/media/high.8a53ebdcabd8f9de9a18.jpg",
     "static/media/BloodWorks_UserDashSettings.jpg": "/static/media/BloodWorks_UserDashSettings.ef18e7385dce40c7b5e7.jpg",
     "static/media/TicTacToe_OTurn.png": "/static/media/TicTacToe_OTurn.48b024a87ca424869c71.png",
     "static/media/BloodWorks_BloodBank.jpg": "/static/media/BloodWorks_BloodBank.da2d5d3dc334c57d1447.jpg",
     "static/media/BloodWorks_Home.jpg": "/static/media/BloodWorks_Home.4ea7a5e155094472fe12.jpg",
     "static/media/TicTacToe_XTurn.png": "/static/media/TicTacToe_XTurn.f4a62c74bb292f03cb45.png",
+    "static/media/2048_GameStart.png": "/static/media/2048_GameStart.d380f45fcfb2ea427471.png",
     "static/media/TicTacToe_GameStart.png": "/static/media/TicTacToe_GameStart.3b601aff19b9b6a8361f.png",
     "static/media/TicTacToe_PlayScreen.png": "/static/media/TicTacToe_PlayScreen.7038a71614757c7dc3f1.png",
+    "static/media/2048_PlayScreen.png": "/static/media/2048_PlayScreen.6d6edb7f6f7976819289.png",
     "static/media/Rock_Paper_Scissor_CVP_Score.png": "/static/media/Rock_Paper_Scissor_CVP_Score.732690a4781a003b0d76.png",
     "static/media/Rock_Paper_Scissor_PVP_Score.png": "/static/media/Rock_Paper_Scissor_PVP_Score.a153c1a3490657580c64.png",
     "static/media/background-gif7.gif": "/static/media/background-gif7.ba13387192bce02578bd.gif",
     "index.html": "/index.html",
     "main.ab044045.css.map": "/static/css/main.ab044045.css.map",
-    "main.acd1c409.js.map": "/static/js/main.acd1c409.js.map",
+    "main.47a3c61e.js.map": "/static/js/main.47a3c61e.js.map",
     "453.ac9b7e2a.chunk.js.map": "/static/js/453.ac9b7e2a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ab044045.css",
-    "static/js/main.acd1c409.js"
+    "static/js/main.47a3c61e.js"
   ]
 }
