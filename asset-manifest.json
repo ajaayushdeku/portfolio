@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.ab044045.css",
-    "main.js": "/static/js/main.47a3c61e.js",
+    "main.css": "/static/css/main.66f0b86b.css",
+    "main.js": "/static/js/main.f68b1b27.js",
     "static/js/453.ac9b7e2a.chunk.js": "/static/js/453.ac9b7e2a.chunk.js",
     "static/media/bggg.gif": "/static/media/bggg.09fb9f3805000938643c.gif",
     "static/media/logo.png": "/static/media/logo.5478cd238ed913feb425.png",
@@ -63,12 +63,12 @@
     "static/media/Rock_Paper_Scissor_PVP_Score.png": "/static/media/Rock_Paper_Scissor_PVP_Score.a153c1a3490657580c64.png",
     "static/media/background-gif7.gif": "/static/media/background-gif7.ba13387192bce02578bd.gif",
     "index.html": "/index.html",
-    "main.ab044045.css.map": "/static/css/main.ab044045.css.map",
-    "main.47a3c61e.js.map": "/static/js/main.47a3c61e.js.map",
+    "main.66f0b86b.css.map": "/static/css/main.66f0b86b.css.map",
+    "main.f68b1b27.js.map": "/static/js/main.f68b1b27.js.map",
     "453.ac9b7e2a.chunk.js.map": "/static/js/453.ac9b7e2a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ab044045.css",
-    "static/js/main.47a3c61e.js"
+    "static/css/main.66f0b86b.css",
+    "static/js/main.f68b1b27.js"
   ]
 }
