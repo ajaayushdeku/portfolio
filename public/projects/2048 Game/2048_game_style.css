@@ -277,6 +277,27 @@ p {
   gap: 8px;
 }
 
+.control-btn {
+  background: #bbada0;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.1s ease, background 0.1s ease;
+}
+
+.control-btn svg {
+  width: 32px;
+  height: 32px;
+  fill: #fff;
+}
+
+.control-btn:active {
+  transform: scale(0.92);
+  background: #a39489;
+}
 .control-grid button {
   height: 50px;
   border: none;
