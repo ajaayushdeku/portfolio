@@ -44,6 +44,12 @@ import snakegame1 from "../asset/images/Snake_Game/Snake_Game_PlayScreen.png";
 import snakegame2 from "../asset/images/Snake_Game/Snake_Game_GamePlay.png";
 import snakegame3 from "../asset/images/Snake_Game/Snake_Game_GameOver.png";
 
+import twozerofoureightgame1 from "../asset/images/2048/2048_PlayScreen.png";
+import twozerofoureightgame2 from "../asset/images/2048/2048_GameStart.png";
+import twozerofoureightgame3 from "../asset/images/2048/2048_GamePlay.png";
+import twozerofoureightgame4 from "../asset/images/2048/2048_GameWon.png";
+import twozerofoureightgame5 from "../asset/images/2048/2048_GameOver.png";
+
 import merchVault1 from "../asset/images/MerchVault/MerchVault_Home.jpg";
 import merchVault2 from "../asset/images/MerchVault/MerchVault_Customize.jpg";
 import merchVault3 from "../asset/images/MerchVault/MerchVault_Artist.jpg";
@@ -55,9 +61,9 @@ import visuoFind3 from "../asset/images/VisuoFind/VisuoFind_ViewResult.png";
 
 import "../styles/Projects.css";
 
-import sampleImg from "../asset/bggg.gif";
+import sampleImg from "../asset/gifs/bggg.gif";
 
-import judgegy from "../asset/background-gif7.gif";
+import judgegy from "../asset/gifs/background-gif7.gif";
 
 const allProjects = [
   {
@@ -126,6 +132,21 @@ const allProjects = [
     desc: "Snake Game is a classic arcade-style game where the player controls a growing snake, navigating it to eat food while avoiding collisions with walls and itself. It features continuous movement, score tracking, high score storage using localStorage, and both keyboard and on-screen controls. Built with HTML, CSS, and JavaScript, it offers a responsive and engaging UI for desktop and mobile devices.",
     demo: "/projects/Snake%20Game/snake_game.html",
     img: [snakegame1, snakegame2, snakegame3],
+    tags: ["HTML", "CSS", "JavaScript"],
+    type: "game",
+  },
+
+  {
+    name: "2048 Game",
+    desc: "2048 is a classic puzzle game where players slide numbered tiles on a 4×4 grid to combine matching values and reach the 2048 tile. The game features smooth tile movements, merge animations, score tracking with best score saved using localStorage, keyboard and on-screen controls, and win/game-over detection. Built with HTML, CSS, and JavaScript, it offers an intuitive and responsive gameplay experience.",
+    demo: "/projects/2048%20Game/2048_game.html",
+    img: [
+      twozerofoureightgame1,
+      twozerofoureightgame2,
+      twozerofoureightgame3,
+      twozerofoureightgame4,
+      twozerofoureightgame5,
+    ],
     tags: ["HTML", "CSS", "JavaScript"],
     type: "game",
   },
