@@ -9,8 +9,6 @@ const achievements = [
     date: "Dec 2024",
     image: award1,
     tag: "Game Development",
-    icon: "🎮",
-    color: "#667eea",
   },
   {
     title: "Top GPA (4.0) Award",
@@ -18,8 +16,6 @@ const achievements = [
     date: "Aug 2024",
     image: award1,
     tag: "Academics",
-    icon: "🏆",
-    color: "#f093fb",
   },
 ];
 
@@ -27,102 +23,68 @@ const Achievements = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <section className="achievement-section achievements-wrapper">
-      {/* Header Section */}
-      <div className="achievements-header">
-        {/* <h2 className="achievements-title">
-          Achievements & <span className="gradient-text">Awards</span>
-        </h2> */}
+    <section className="achievement-section" id="achievements">
+      <div className="ach-container">
+        {/* Header */}
+        <div className="ach-header">
+          <span className="ach-eyebrow">Recognition &amp; milestones</span>
+          <h2 className="ach-title">
+            My <span>Achievements</span>
+          </h2>
+          <div className="ach-title-bar" />
+          <p className="ach-subtitle">
+            Highlights of things I've built, earned, and been recognized for.
+          </p>
+        </div>
 
-        <h1 className="component-heading">
-          My <span>Achievements</span>
-        </h1>
-        <p className="achievements-subtitle">
-          Highlights of my milestones and recognitions
-        </p>
-      </div>
-
-      {/* Achievements Grid */}
-      <div className="achievements-grid">
-        {achievements.map((ach, index) => (
-          <div
-            key={index}
-            className="achievement-card"
-            onMouseEnter={() => setHoveredIndex(index)}
-            onMouseLeave={() => setHoveredIndex(null)}
-            style={{
-              animationDelay: `${index * 0.15}s`,
-            }}
-          >
-            {/* Image Section with Overlay */}
-            <div className="achievement-image-wrapper">
-              <img
-                src={ach.image}
-                alt={ach.title}
-                className="achievement-img"
-              />
-              <div className="achievement-image-overlay">
-                <span className="achievement-icon">{ach.icon}</span>
+        {/* Cards */}
+        <div className="ach-grid">
+          {achievements.map((ach, index) => (
+            <div
+              key={index}
+              className="ach-card"
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+              {/* Image */}
+              <div className="ach-img-wrap">
+                <img src={ach.image} alt={ach.title} className="ach-img" />
+                <div className="ach-img-overlay" />
+                <span className="ach-img-tag">{ach.tag}</span>
+                <span className="ach-img-date">{ach.date}</span>
               </div>
 
-              {/* Decorative gradient border */}
-              <div
-                className="achievement-glow"
-                style={{
-                  background: `linear-gradient(135deg, ${ach.color}, transparent)`,
-                }}
-              ></div>
-            </div>
-
-            {/* Content Section */}
-            <div className="achievement-content">
-              <div className="achievement-header-row">
-                <span
-                  className="ach-tag"
-                  style={{
-                    background: `${ach.color}20`,
-                    color: ach.color,
-                    border: `1px solid ${ach.color}40`,
-                  }}
-                >
-                  {ach.tag}
-                </span>
-                <span className="ach-date">{ach.date}</span>
-              </div>
-
-              <h3 className="achievement-title-text">{ach.title}</h3>
-              <p className="achievement-description">{ach.desc}</p>
-
-              {/* Animated Progress Bar */}
-              <div className="achievement-bar">
-                <div
-                  className="achievement-bar-fill"
-                  style={{
-                    width: hoveredIndex === index ? "100%" : "0%",
-                    background: `linear-gradient(90deg, ${ach.color}, ${ach.color}80)`,
-                  }}
-                ></div>
+              {/* Body */}
+              <div className="ach-body">
+                <h3 className="ach-card-title">{ach.title}</h3>
+                <p className="ach-card-desc">{ach.desc}</p>
+                <div className="ach-progress">
+                  <div
+                    className="ach-progress-fill"
+                    style={{ width: hoveredIndex === index ? "100%" : "0%" }}
+                  />
+                </div>
               </div>
             </div>
+          ))}
+        </div>
+
+        {/* Stats */}
+        <div className="ach-stats">
+          <div className="ach-stat">
+            <div className="ach-stat-num">4.0</div>
+            <div className="ach-stat-lbl">GPA Achieved</div>
           </div>
-        ))}
-      </div>
-
-      {/* Stats Section */}
-      <div className="achievements-stats">
-        <div className="stat-item">
-          <div className="stat-number">4.0</div>
-          <div className="stat-label">GPA Achieved</div>
-        </div>
-        <div className="stat-divider"></div>
-        <div className="stat-item">
-          <div className="stat-number">3.8</div>
-          <div className="stat-label">Overall CGPA</div>
-        </div>
-        <div className="stat-divider"></div>
-        <div className="stat-item">
-          <div className="stat-number">{achievements.length}</div>
-          <div className="stat-label">Major Awards</div>
+          <div className="ach-stat-sep" />
+          <div className="ach-stat">
+            <div className="ach-stat-num">3.8</div>
+            <div className="ach-stat-lbl">Overall CGPA</div>
+          </div>
+          <div className="ach-stat-sep" />
+          <div className="ach-stat">
+            <div className="ach-stat-num">{achievements.length}</div>
+            <div className="ach-stat-lbl">Major Awards</div>
+          </div>
         </div>
       </div>
     </section>

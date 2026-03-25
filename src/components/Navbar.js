@@ -5,20 +5,22 @@ import { IoMdClose } from "react-icons/io";
 import { AiFillHome, AiOutlineProject } from "react-icons/ai";
 import { FaUserGraduate, FaTools } from "react-icons/fa";
 import { MdContacts } from "react-icons/md";
-// import hi from "../asset/gifs/welcome_gif.gif";
 import "../styles/NavBar.css";
 
 const Navbar = () => {
   const [theme, setTheme] = useState("dark");
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
-
-  console.log("Current theme in Navbar:", theme);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     document.body.setAttribute("data-theme", theme);
+  }, [theme]);
 
+  useEffect(() => {
     const handleScroll = () => {
+      setScrolled(window.scrollY > 12);
+
       const sections = [
         "home",
         "skills",
@@ -27,7 +29,6 @@ const Navbar = () => {
         "contact",
       ];
       const scrollPos = window.scrollY + window.innerHeight / 3;
-
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = document.getElementById(sections[i]);
         if (section && section.offsetTop <= scrollPos) {
@@ -39,7 +40,7 @@ const Navbar = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [theme]);
+  }, []);
 
   const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
 
@@ -52,19 +53,23 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
       <div className="nav-container">
-        {/* Left: Logo or Hamburger */}
-        <div className="nav-left">
-          <button
-            className="hamburger-btn"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            {menuOpen ? <IoMdClose size={28} /> : <GiHamburgerMenu size={28} />}
-          </button>
-        </div>
+        {/* Logo */}
+        <a href="#home" className="nav-logo">
+          port<span>folio</span>
+        </a>
 
-        {/* Middle: Nav Links */}
+        {/* Hamburger */}
+        <button
+          className="hamburger-btn"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          {menuOpen ? <IoMdClose size={24} /> : <GiHamburgerMenu size={24} />}
+        </button>
+
+        {/* Nav links */}
         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
           {navItems.map((item) => (
             <li key={item.name} onClick={() => setMenuOpen(false)}>
@@ -81,21 +86,26 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Right: Welcome & Theme Toggle */}
+        {/* Theme toggle */}
         <div className="nav-right">
-          {/* <div className="nav-welcome">
-            <span className="welcome-logo">👋🏻</span>
-            <span>Hi, Aayush!</span>
-          </div> */}
-          <button onClick={toggleTheme} className="theme-toggle-button">
+          <button
+            onClick={toggleTheme}
+            className="theme-toggle-button"
+            aria-label="Toggle theme"
+          >
             {theme === "dark" ? (
-              <MdSunny size={22} />
+              <MdSunny size={18} />
             ) : (
-              <MdDarkMode size={22} />
+              <MdDarkMode size={18} />
             )}
           </button>
         </div>
       </div>
+
+      {/* Mobile backdrop */}
+      {menuOpen && (
+        <div className="nav-backdrop" onClick={() => setMenuOpen(false)} />
+      )}
     </nav>
   );
 };

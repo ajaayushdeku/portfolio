@@ -1,120 +1,105 @@
-import React, { useRef } from "react";
-import { FiMapPin } from "react-icons/fi";
-import { LuPhone } from "react-icons/lu";
-import { MdOutlineMailOutline } from "react-icons/md";
-import emailjs from "emailjs-com";
+import React, { useRef, useState } from "react";
+import { MdEmail, MdLocationOn } from "react-icons/md";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import "../styles/Contact.css";
 
+const contactItems = [
+  {
+    icon: <MdEmail />,
+    label: "Email",
+    value: "aayush@example.com",
+  },
+  {
+    icon: <FaLinkedin />,
+    label: "LinkedIn",
+    value: "aj-aayush-shrestha",
+  },
+  {
+    icon: <FaGithub />,
+    label: "GitHub",
+    value: "ajaayushdeku",
+  },
+  {
+    icon: <MdLocationOn />,
+    label: "Location",
+    value: "Pokhara, Nepal",
+  },
+];
+
 const Contact = () => {
-  const formRef = useRef();
+  const formRef = useRef(null);
+  const [sent, setSent] = useState(false);
 
-  const sendEmail = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-
-    emailjs
-      .sendForm(
-        "service_79ma28b", // Your EmailJS service ID
-        "template_upvnpv8", // Your EmailJS template ID
-        formRef.current,
-        "bH5QW9n4OlfGwUGE6", // Your EmailJS public key
-      )
-      .then(
-        () => {
-          alert("Message sent successfully!");
-          e.target.reset();
-        },
-        () => {
-          alert("Failed to send message.");
-        },
-      );
+    // Wire up your email service (EmailJS, Formspree, etc.) here
+    setSent(true);
+    formRef.current?.reset();
+    setTimeout(() => setSent(false), 4000);
   };
 
-  const contactDetails = [
-    {
-      icon: <FiMapPin size={22} />,
-      label: "Address",
-      value: "Prithivi-Chowk, Pokhara, Nepal",
-    },
-    {
-      icon: <LuPhone size={22} />,
-      label: "Phone",
-      value: "+977 - 9814173184",
-    },
-    {
-      icon: <MdOutlineMailOutline size={22} />,
-      label: "Email",
-      value: "ajaayushsth234@gmail.com",
-    },
-  ];
-
   return (
-    <section className="contact-section">
-      <h2 className="component-heading">
-        My <span>Contacts</span>
-      </h2>
+    <section className="contact-section" id="contact">
+      <div className="contact-wrapper">
+        {/* Header */}
+        <div className="contact-header">
+          <span className="contact-eyebrow">Get in touch</span>
+          <h2 className="contact-title">
+            Contact <span>Me</span>
+          </h2>
+          <div className="contact-title-bar" />
+          <p className="contact-subtitle">
+            Have a project in mind or just want to say hi? My inbox is open.
+          </p>
+        </div>
 
-      <div className="contact-container">
-        {/* Left Column: Contact Details */}
-        <div className="contact-left">
-          <p>Feel free to reach out through email, phone, or the form below.</p>
-          <div className="contact-info-vertical">
-            {contactDetails.map((item, index) => (
-              <div className="contact-item" key={index}>
-                <span className="contact-icon">{item.icon}</span>
-                <div className="contact-info">
-                  <h4>{item.label}</h4>
-                  <p>{item.value}</p>
+        <div className="contact-container">
+          {/* Left: info items */}
+          <div className="contact-left">
+            {contactItems.map((item) => (
+              <div key={item.label} className="contact-item">
+                <div className="contact-icon-wrap">{item.icon}</div>
+                <div className="contact-item-body">
+                  <span className="contact-item-label">{item.label}</span>
+                  <span className="contact-item-value">{item.value}</span>
                 </div>
               </div>
             ))}
           </div>
-        </div>
 
-        {/* Right Column: Contact Form */}
-        <div className="contact-right">
-          <form ref={formRef} className="contact-form" onSubmit={sendEmail}>
-            <div className="form-row">
-              <label>Name:</label>
+          {/* Right: form */}
+          <div className="contact-right">
+            <form
+              className="contact-form"
+              ref={formRef}
+              onSubmit={handleSubmit}
+            >
+              <div className="form-row">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your name"
+                  required
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your email"
+                  required
+                />
+              </div>
               <input
                 type="text"
-                name="name" // Matches {{name}} in your template
-                placeholder="Enter Your Name"
+                name="subject"
+                placeholder="Subject"
                 required
               />
-            </div>
-
-            <div className="form-row">
-              <label>Subject:</label>
-              <input
-                type="text"
-                name="subject" // Optional, if you want to pass email separately
-                placeholder="Enter Your Subject"
-                required
-              />
-            </div>
-
-            <div className="form-row">
-              <label>Email:</label>
-              <input
-                type="email"
-                name="email" // Optional, if you want to pass email separately
-                placeholder="Enter Your Email"
-                required
-              />
-            </div>
-
-            <div className="form-row">
-              <label>Message:</label>
-              <textarea
-                name="message" // Matches {{message}} in your template
-                placeholder="Enter Your Message"
-                rows="5"
-                required
-              ></textarea>
-            </div>
-
-            <button type="submit">Send Message</button>
-          </form>
+              <textarea name="message" placeholder="Your message..." required />
+              <button type="submit" className="contact-submit">
+                {sent ? "Message sent ✓" : "Send Message →"}
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </section>

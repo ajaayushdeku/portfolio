@@ -1,84 +1,144 @@
 import React, { useCallback, useEffect, useState } from "react";
-
 import judgegy from "../asset/gifs/background-gif7.gif";
 import { allProjects } from "../utils/projectInfo";
+import "../styles/Projects.css";
 
 const tagStyles = {
-  HTML: { bg: "#e34c27", shadow: "#b83c1e", color: "#ffffff" },
-  CSS: { bg: "#32a9db", shadow: "#217ea7", color: "#ffffff" },
-  JavaScript: { bg: "#f0da4f", shadow: "#c4b53e", color: "#323330" },
-  "React.js": { bg: "#61d9fa", shadow: "#3eaac7", color: "#ffffff" },
-  MongoDB: { bg: "#439934", shadow: "#2c6622", color: "#ffffff" },
-  "C#": { bg: "#9c4f96", shadow: "#6f3570", color: "#ffffff" },
-  Unity3D: { bg: "#4d4d4d", shadow: "#2f2f2f", color: "#ffffff" },
-  Blender: { bg: "#e87400", shadow: "#a95500", color: "#225785" },
-  Python: { bg: "#3474a8", shadow: "#225785", color: "#ffcf3d" },
-  "Node.js": { bg: "#69a164", shadow: "#4a7350", color: "#323330" },
-  PHP: { bg: "#7b7fb5", shadow: "#666a9ece", color: "#323330" },
-  MySQL: { bg: "#004463", shadow: "#002e44", color: "#e07014" },
-  "Spring Boot": { bg: "#6db53e", shadow: "#4c822a", color: "#ffffff" },
-  PostgreSQL: { bg: "#3a6b94", shadow: "#2a4d6d", color: "#ffffff" },
-  default: { bg: "#8f8d8d", shadow: "#5e5c5c", color: "#ffffff" },
+  HTML: {
+    bg: "rgba(227,76,39,0.12)",
+    border: "rgba(227,76,39,0.3)",
+    color: "#e34c27",
+  },
+  CSS: {
+    bg: "rgba(50,169,219,0.12)",
+    border: "rgba(50,169,219,0.3)",
+    color: "#32a9db",
+  },
+  JavaScript: {
+    bg: "rgba(240,218,79,0.12)",
+    border: "rgba(240,218,79,0.3)",
+    color: "#c4b53e",
+  },
+  "React.js": {
+    bg: "rgba(97,217,250,0.12)",
+    border: "rgba(97,217,250,0.3)",
+    color: "#61d9fa",
+  },
+  MongoDB: {
+    bg: "rgba(67,153,52,0.12)",
+    border: "rgba(67,153,52,0.3)",
+    color: "#57c23a",
+  },
+  "C#": {
+    bg: "rgba(156,79,150,0.12)",
+    border: "rgba(156,79,150,0.3)",
+    color: "#c97dc3",
+  },
+  Unity3D: {
+    bg: "rgba(77,77,77,0.25)",
+    border: "rgba(160,160,160,0.2)",
+    color: "#c9d1d9",
+  },
+  Blender: {
+    bg: "rgba(232,116,0,0.12)",
+    border: "rgba(232,116,0,0.3)",
+    color: "#e87400",
+  },
+  Python: {
+    bg: "rgba(52,116,168,0.12)",
+    border: "rgba(52,116,168,0.3)",
+    color: "#4c9fd4",
+  },
+  "Node.js": {
+    bg: "rgba(105,161,100,0.12)",
+    border: "rgba(105,161,100,0.3)",
+    color: "#69a164",
+  },
+  PHP: {
+    bg: "rgba(123,127,181,0.12)",
+    border: "rgba(123,127,181,0.3)",
+    color: "#9b9fc9",
+  },
+  MySQL: {
+    bg: "rgba(0,68,99,0.2)",
+    border: "rgba(0,68,99,0.4)",
+    color: "#e07014",
+  },
+  "Spring Boot": {
+    bg: "rgba(109,181,62,0.12)",
+    border: "rgba(109,181,62,0.3)",
+    color: "#7dc94a",
+  },
+  PostgreSQL: {
+    bg: "rgba(58,107,148,0.12)",
+    border: "rgba(58,107,148,0.3)",
+    color: "#6da3cc",
+  },
+  default: {
+    bg: "rgba(139,148,158,0.12)",
+    border: "rgba(139,148,158,0.3)",
+    color: "#8b949e",
+  },
 };
 
 const Projects = () => {
   const [imageIndices, setImageIndices] = useState(
-    allProjects.reduce((acc, project) => {
-      acc[project.name] = 0;
+    allProjects.reduce((acc, p) => {
+      acc[p.name] = 0;
       return acc;
     }, {}),
   );
-
-  const gameProjects = allProjects.filter((p) => p.type === "game");
-  const webProjects = allProjects.filter((p) => p.type === "web");
-
   const [expandedProjects, setExpandedProjects] = useState({});
-
-  // Lightbox states
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxImages, setLightboxImages] = useState([]);
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [lightboxProjectName, setLightboxProjectName] = useState("");
 
-  const nextImage = useCallback(() => {
-    setLightboxIndex((prev) => (prev + 1) % lightboxImages.length);
-  }, [lightboxImages]);
+  const gameProjects = allProjects.filter((p) => p.type === "game");
+  const webProjects = allProjects.filter((p) => p.type === "web");
 
-  const prevImage = useCallback(() => {
-    setLightboxIndex((prev) =>
-      prev === 0 ? lightboxImages.length - 1 : prev - 1,
-    );
-  }, [lightboxImages]);
+  const nextImage = useCallback(
+    () => setLightboxIndex((prev) => (prev + 1) % lightboxImages.length),
+    [lightboxImages],
+  );
+  const prevImage = useCallback(
+    () =>
+      setLightboxIndex((prev) =>
+        prev === 0 ? lightboxImages.length - 1 : prev - 1,
+      ),
+    [lightboxImages],
+  );
 
   useEffect(() => {
     const interval = setInterval(() => {
       setImageIndices((prev) => {
         const updated = { ...prev };
-        allProjects.forEach((project) => {
-          updated[project.name] =
-            (updated[project.name] + 1) % project.img.length;
+        allProjects.forEach((p) => {
+          updated[p.name] = (updated[p.name] + 1) % p.img.length;
         });
         return updated;
       });
     }, 5000);
-
     return () => clearInterval(interval);
-  }, [nextImage, prevImage]);
+  }, []);
 
-  const toggleProject = (name) => {
-    setExpandedProjects((prev) => ({
-      ...prev,
-      [name]: !prev[name],
-    }));
-  };
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (!lightboxOpen) return;
+      if (e.key === "ArrowRight") nextImage();
+      if (e.key === "ArrowLeft") prevImage();
+      if (e.key === "Escape") closeLightbox();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [lightboxOpen, nextImage, prevImage]);
 
-  // Lightbox functions
-  const openLightbox = (images, index, projectName) => {
+  const openLightbox = (images, index, name) => {
     setLightboxImages(images);
     setLightboxIndex(index);
-    setLightboxProjectName(projectName);
+    setLightboxProjectName(name);
     setLightboxOpen(true);
-    document.body.style.overflow = "hidden"; // Prevent background scrolling
+    document.body.style.overflow = "hidden";
   };
 
   const closeLightbox = () => {
@@ -86,31 +146,19 @@ const Projects = () => {
     document.body.style.overflow = "auto";
   };
 
-  // Keyboard navigation for lightbox
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (!lightboxOpen) return;
-
-      if (e.key === "ArrowRight") nextImage();
-      if (e.key === "ArrowLeft") prevImage();
-      if (e.key === "Escape") closeLightbox();
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [lightboxOpen, lightboxImages, nextImage, prevImage]);
+  const toggleProject = (name) =>
+    setExpandedProjects((prev) => ({ ...prev, [name]: !prev[name] }));
 
   const ProjectCard = ({ project }) => {
     const currentIndex = imageIndices[project.name];
     const isOpen = expandedProjects[project.name];
 
     return (
-      <div className={`project-card ${isOpen ? "open" : "closed"}`}>
-        {/* Image Container */}
+      <div className={`project-card ${isOpen ? "open" : ""}`}>
+        {/* Image */}
         <div
           className="project-img-container"
           onClick={() => openLightbox(project.img, currentIndex, project.name)}
-          style={{ cursor: "pointer" }}
           title="Click to view full images"
         >
           <div className="project-img">
@@ -123,84 +171,72 @@ const Projects = () => {
               />
             ))}
           </div>
-
-          {/* Image Indicators */}
           {project.img.length > 1 && (
             <div className="image-indicators">
               {project.img.map((_, idx) => (
                 <div
                   key={idx}
-                  className={`indicator-dot ${
-                    idx === currentIndex ? "active" : ""
-                  }`}
+                  className={`indicator-dot ${idx === currentIndex ? "active" : ""}`}
                 />
               ))}
             </div>
           )}
         </div>
 
-        {/* Content Section */}
+        {/* Content */}
         <div className="project-content">
           <div className="project-header">
             <h3 className="project-name">{project.name}</h3>
-            {/* <span className="project-type-badge">
-              {project.type === "game" ? "🎮 Game" : "💻 Web"}
-            </span> */}
-
             <div className="project-action">
               {project.demo ? (
                 <button
-                  className="project-btn project-overlay-btn"
+                  className="project-btn project-btn-primary"
                   onClick={() => window.open(project.demo, "_blank")}
                 >
-                  <span>🎮 Play Demo</span>→
+                  Play Demo →
                 </button>
               ) : project.pdf ? (
                 <button
-                  className="project-btn project-overlay-btn"
+                  className="project-btn project-btn-primary"
                   onClick={() => window.open(project.pdf, "_blank")}
                 >
-                  <span>💻 View Report</span>→
+                  View Report →
                 </button>
               ) : project.link ? (
                 <button
-                  className="project-btn project-overlay-btn"
+                  className="project-btn project-btn-primary"
                   onClick={() => window.open(project.link, "_blank")}
                 >
-                  <span>🌐 View Project</span>→
+                  View Project →
                 </button>
               ) : (
-                <button className="project-btn project-still-btn">
-                  <span>🥶 Still in Production</span>
+                <button className="project-btn project-btn-wip" disabled>
+                  Still in Production
                 </button>
               )}
             </div>
           </div>
 
-          {/* Toggle Button */}
           <button
             className="project-toggle-btn"
             onClick={() => toggleProject(project.name)}
           >
-            {isOpen ? "▲ Show Less" : "▼ Show More"}
+            {isOpen ? "Show less ▲" : "Show more ▾"}
           </button>
 
-          {/* Dropdown Content */}
           <div className="project-dropdown">
             <p className="project-description">{project.desc}</p>
-
             <div className="project-tags">
               {project.tags.map((tag, idx) => {
-                const tagStyle = tagStyles[tag] || tagStyles.default;
+                const s = tagStyles[tag] || tagStyles.default;
                 return (
                   <span
                     key={idx}
-                    className="tag"
+                    className="proj-tag"
                     style={{
-                      backgroundColor: tagStyle.bg,
-                      color: tagStyle.color,
-                      boxShadow: `0 2px 8px ${tagStyle.shadow}40`,
-                      "--shadow-color": tagStyle.shadow,
+                      background: s.bg,
+                      color: s.color,
+                      border: `1px solid ${s.border}`,
                     }}
                   >
                     {tag}
@@ -215,106 +251,92 @@ const Projects = () => {
   };
 
   return (
-    <section className="project-section">
-      {/* Hero Header */}
-      <div className="section-header">
-        <h2 className="component-heading">
+    <section className="project-section" id="projects">
+      {/* Header */}
+      <div className="proj-header">
+        <span className="proj-eyebrow">What I've built</span>
+        <h2 className="proj-title">
           My <span>Projects</span>
         </h2>
-        <p className="section-subtitle">
-          Explore my collection of games and web applications, crafted with
-          passion and precision
+        <div className="proj-title-bar" />
+        <p className="proj-subtitle">
+          A collection of games and web apps crafted with passion and precision.
         </p>
       </div>
 
-      {/* Web Applications Section */}
-      <div className="projects-section">
-        <div className="section-divider">
-          <h2>💻 Web Applications</h2>
+      {/* Web Apps */}
+      <div className="projects-group">
+        <div className="group-label">
+          <span>Web Applications</span>
         </div>
         <div className="projects-grid">
-          {webProjects.map((project) => (
-            <ProjectCard key={project.name} project={project} />
+          {webProjects.map((p) => (
+            <ProjectCard key={p.name} project={p} />
           ))}
         </div>
       </div>
 
-      {/* Games Section */}
-      <div className="projects-section">
-        <div className="section-divider">
-          <h2>🎮 Games</h2>
-          <img src={judgegy} alt="judgegy" className="judgegy" />
+      {/* Games */}
+      <div className="projects-group">
+        <div className="group-label">
+          <span>Games</span>
+          <img src={judgegy} alt="games gif" className="group-gif" />
         </div>
         <div className="projects-grid">
-          {gameProjects.map((project) => (
-            <ProjectCard key={project.name} project={project} />
+          {gameProjects.map((p) => (
+            <ProjectCard key={p.name} project={p} />
           ))}
         </div>
       </div>
 
-      {/* Lightbox Modal */}
+      {/* Lightbox */}
       {lightboxOpen && (
         <div className="lightbox-overlay" onClick={closeLightbox}>
           <div
             className="lightbox-content"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Close Button */}
             <button className="lightbox-close" onClick={closeLightbox}>
               ✕
             </button>
-
-            {/* Project Name */}
             <div className="lightbox-header">
               <h3>{lightboxProjectName}</h3>
               <span className="lightbox-counter">
                 {lightboxIndex + 1} / {lightboxImages.length}
               </span>
             </div>
-
-            {/* Image */}
             <div className="lightbox-image-container">
               <img
                 src={lightboxImages[lightboxIndex]}
-                alt={`${lightboxProjectName} screenshot ${lightboxIndex + 1}`}
+                alt={`${lightboxProjectName} ${lightboxIndex + 1}`}
               />
             </div>
-
-            {/* Navigation Buttons */}
             {lightboxImages.length > 1 && (
               <>
                 <button
                   className="lightbox-nav lightbox-prev"
                   onClick={prevImage}
-                  title="Previous (←)"
                 >
                   ❮
                 </button>
                 <button
                   className="lightbox-nav lightbox-next"
                   onClick={nextImage}
-                  title="Next (→)"
                 >
                   ❯
                 </button>
+                <div className="lightbox-thumbnails">
+                  {lightboxImages.map((img, idx) => (
+                    <div
+                      key={idx}
+                      className={`lightbox-thumb ${idx === lightboxIndex ? "active" : ""}`}
+                      onClick={() => setLightboxIndex(idx)}
+                    >
+                      <img src={img} alt={`Thumbnail ${idx + 1}`} />
+                    </div>
+                  ))}
+                </div>
               </>
-            )}
-
-            {/* Thumbnail Strip */}
-            {lightboxImages.length > 1 && (
-              <div className="lightbox-thumbnails">
-                {lightboxImages.map((img, idx) => (
-                  <div
-                    key={idx}
-                    className={`lightbox-thumb ${
-                      idx === lightboxIndex ? "active" : ""
-                    }`}
-                    onClick={() => setLightboxIndex(idx)}
-                  >
-                    <img src={img} alt={`Thumbnail ${idx + 1}`} />
-                  </div>
-                ))}
-              </div>
             )}
           </div>
         </div>
