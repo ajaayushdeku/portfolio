@@ -4,8 +4,9 @@
   min-height: 100vh;
   /* background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 100%); */
   padding: 80px 20px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, sans-serif;
 }
 
 /* ================== HEADER SECTION ================== */
@@ -87,7 +88,9 @@
   border-radius: 20px;
   padding: 2px;
   background: linear-gradient(135deg, transparent, rgba(102, 126, 234, 0.3));
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   opacity: 0;
@@ -249,7 +252,11 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background: linear-gradient(135deg, var(--bg-color) 0%, var(--bg-color) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--bg-color-primary) 0%,
+    var(--bg-color-secondary) 100%
+  );
   padding: 40px 30px;
   border-radius: 20px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);

@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { MdDarkMode, MdSunny } from "react-icons/md";
-
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import { AiFillHome, AiOutlineProject } from "react-icons/ai";
 import { FaUserGraduate, FaTools } from "react-icons/fa";
 import { MdContacts } from "react-icons/md";
-import logo from "../asset/logo.png";
-import hi from "../asset/gifs/welcome_gif.gif";
+// import hi from "../asset/gifs/welcome_gif.gif";
+import "../styles/NavBar.css";
 
 const Navbar = () => {
   const [theme, setTheme] = useState("dark");
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("home"); // Track active
+  const [activeSection, setActiveSection] = useState("home");
+
+  console.log("Current theme in Navbar:", theme);
 
   useEffect(() => {
     document.body.setAttribute("data-theme", theme);
@@ -25,7 +26,7 @@ const Navbar = () => {
         "projects",
         "contact",
       ];
-      const scrollPos = window.scrollY + window.innerHeight / 3; // middle point
+      const scrollPos = window.scrollY + window.innerHeight / 3;
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = document.getElementById(sections[i]);
@@ -40,9 +41,7 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [theme]);
 
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
+  const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
 
   const navItems = [
     { name: "home", icon: <AiFillHome /> },
@@ -53,22 +52,19 @@ const Navbar = () => {
   ];
 
   return (
-    <nav>
+    <nav className="navbar">
       <div className="nav-container">
-        {/* Left Section: Logo */}
+        {/* Left: Logo or Hamburger */}
         <div className="nav-left">
-          {/* <img src={logo} alt="Portfolio Logo" className="nav-logo" /> */}
-
-          {/* Hamburger Button for Mobile */}
           <button
             className="hamburger-btn"
             onClick={() => setMenuOpen(!menuOpen)}
           >
-            {menuOpen ? <IoMdClose size={24} /> : <GiHamburgerMenu size={24} />}
+            {menuOpen ? <IoMdClose size={28} /> : <GiHamburgerMenu size={28} />}
           </button>
         </div>
 
-        {/* Middle Section: Nav Links */}
+        {/* Middle: Nav Links */}
         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
           {navItems.map((item) => (
             <li key={item.name} onClick={() => setMenuOpen(false)}>
@@ -85,19 +81,18 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Right Section: Theme + GitHub + LinkedIn */}
+        {/* Right: Welcome & Theme Toggle */}
         <div className="nav-right">
-          <div className="nav-welcome">
-            Welcome <img src={hi} alt="Hi" className="welcome-logo" />
-          </div>
+          {/* <div className="nav-welcome">
+            <span className="welcome-logo">👋🏻</span>
+            <span>Hi, Aayush!</span>
+          </div> */}
           <button onClick={toggleTheme} className="theme-toggle-button">
-            <div>
-              {theme === "dark" ? (
-                <MdSunny size={24} />
-              ) : (
-                <MdDarkMode size={24} />
-              )}
-            </div>
+            {theme === "dark" ? (
+              <MdSunny size={22} />
+            ) : (
+              <MdDarkMode size={22} />
+            )}
           </button>
         </div>
       </div>

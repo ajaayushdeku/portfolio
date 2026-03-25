@@ -1,4 +1,6 @@
+// Skills.jsx
 import React from "react";
+import "../styles/Skills.css";
 
 const skills = [
   {
@@ -21,7 +23,6 @@ const skills = [
     name: "MongoDB",
     img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
   },
-
   {
     name: "C#",
     img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
@@ -41,19 +42,16 @@ const Skills = () => {
     <section className="skills-section">
       <div className="skills-info-container">
         <h2 className="component-heading">
-          My <span>Skills</span>{" "}
+          My <span>Skills</span>
         </h2>
+
         <div className="skills-grid">
           {skills.map((skill) => (
             <div key={skill.name} className="skill-card">
-              <img
-                src={skill.img}
-                alt={skill.name}
-                width="40"
-                height="40"
-                style={{ marginBottom: "10px" }}
-              />
-              <div>
+              <div className="icon-container">
+                <img src={skill.img} alt={skill.name} />
+              </div>
+              <div className="skill-text">
                 <h3>{skill.name}</h3>
                 <p>Expertise in {skill.name}</p>
               </div>

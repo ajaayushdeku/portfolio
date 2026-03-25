@@ -1,0 +1,229 @@
+/* ================== NAVBAR ================== */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: radial-gradient(
+    circle,
+    var(--bg-color-primary),
+    var(--bg-color-secondary)
+  );
+  backdrop-filter: blur(12px);
+  /* box-shadow: 0 4px 12px var(--box-shadow); */
+  z-index: 10;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+/* ================== CONTAINER ================== */
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 21px 20px;
+  transition: all 0.3s;
+}
+
+/* ================== LEFT ================== */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--link-color);
+  background: linear-gradient(
+    45deg,
+    var(--accent-color),
+    var(--accent-color-2)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-color);
+  transition: all 0.3s;
+}
+
+.hamburger-btn:hover {
+  transform: scale(1.15);
+}
+
+/* ================== NAV LINKS ================== */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 9rem;
+  position: relative;
+  right: 3rem;
+}
+
+/* Show text on hover */
+nav .nav-links li a:hover .nav-text {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+/* Change icon color on hover */
+nav .nav-links li a:hover .nav-icon {
+  color: var(--link-color);
+  transform: scale(1.1);
+}
+
+/* Active state: text always visible */
+nav .nav-links li a.active .nav-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+nav .nav-links li a.active .nav-icon {
+  color: var(--link-color);
+}
+
+.nav-icon {
+  font-size: 1.1rem;
+  transition: all 0.3s;
+}
+
+.nav-text {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* ================== RIGHT ================== */
+.nav-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  border-left: 2px solid rgb(156, 156, 156);
+  padding-left: 2rem;
+  position: absolute;
+  right: 1rem;
+}
+
+.nav-welcome {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.welcome-logo {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  animation: wave 2s infinite;
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(45deg);
+  }
+  50% {
+    transform: rotate(-45deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+}
+
+/* Theme button */
+.theme-toggle-button {
+  background: var(--theme-toggle-btn-bg);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--theme-toggle-text);
+  transition: all 0.3s ease;
+}
+
+.theme-toggle-button:hover {
+  transform: scale(1.1);
+  background-color: var(--theme-toggle-text);
+  color: var(--theme-toggle-btn-bg);
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 900px) {
+  .hamburger-btn {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 25%;
+    height: calc(100vh - 60px);
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 2rem;
+    padding-right: 0;
+    background: var(--navbar-bg);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  .nav-links li a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100px;
+    position: relative;
+    right: 0;
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+  }
+
+  .nav-text {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 500px) {
+  .nav-links {
+    width: 75%;
+  }
+
+  .theme-toggle-button {
+    padding: 4px 8px;
+  }
+}

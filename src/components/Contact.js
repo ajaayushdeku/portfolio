@@ -16,7 +16,7 @@ const Contact = () => {
         "service_79ma28b", // Your EmailJS service ID
         "template_upvnpv8", // Your EmailJS template ID
         formRef.current,
-        "bH5QW9n4OlfGwUGE6" // Your EmailJS public key
+        "bH5QW9n4OlfGwUGE6", // Your EmailJS public key
       )
       .then(
         () => {
@@ -25,7 +25,7 @@ const Contact = () => {
         },
         () => {
           alert("Failed to send message.");
-        }
+        },
       );
   };
 
