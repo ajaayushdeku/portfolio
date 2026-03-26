@@ -13,11 +13,13 @@ const contactItems = [
     icon: <FaLinkedin />,
     label: "LinkedIn",
     value: "aj-aayush-shrestha",
+    link: "https://www.linkedin.com/in/aj-aayush-shrestha/",
   },
   {
     icon: <FaGithub />,
     label: "GitHub",
     value: "ajaayushdeku",
+    link: "https://github.com/ajaayushdeku",
   },
   {
     icon: <MdLocationOn />,
@@ -58,7 +60,9 @@ const Contact = () => {
           <div className="contact-left">
             {contactItems.map((item) => (
               <div key={item.label} className="contact-item">
-                <div className="contact-icon-wrap">{item.icon}</div>
+                <a href={item.link} target="_blank" rel="noopener noreferrer">
+                  <div className="contact-icon-wrap">{item.icon}</div>
+                </a>
                 <div className="contact-item-body">
                   <span className="contact-item-label">{item.label}</span>
                   <span className="contact-item-value">{item.value}</span>

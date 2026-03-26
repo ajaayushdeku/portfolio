@@ -346,7 +346,7 @@
 
 .project-btn-primary {
   background: var(--accent-color);
-  color: #0d1117;
+  color: #fff;
 }
 
 .project-btn-primary:hover {

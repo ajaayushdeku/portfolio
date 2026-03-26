@@ -4,132 +4,147 @@ import "../styles/Hero.css";
 
 const Hero = () => {
   const canvasRef = useRef(null);
+  const animRef = useRef(null);
 
-  // State to store current theme from body
   const [theme, setTheme] = useState(
     document.body.getAttribute("data-theme") || "dark",
   );
 
+  // Watch for theme changes
   useEffect(() => {
-    // Function to update theme when body attribute changes
     const observer = new MutationObserver(() => {
       setTheme(document.body.getAttribute("data-theme") || "dark");
     });
-
     observer.observe(document.body, {
       attributes: true,
       attributeFilter: ["data-theme"],
     });
-
     return () => observer.disconnect();
   }, []);
 
+  // Particle canvas
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
-    let particles = [];
-    const numParticles = 40;
 
-    const resizeCanvas = () => {
+    const isDark = theme !== "light";
+    const dotColor = isDark ? "rgba(20, 137, 255, 0.55)" : "rgb(9, 107, 218)";
+    const lineAlpha = isDark ? 0.75 : 0.85;
+
+    const resize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     };
+    resize();
+    window.addEventListener("resize", resize);
 
-    resizeCanvas();
-    window.addEventListener("resize", resizeCanvas);
-
-    // Initialize particles
-    for (let i = 0; i < numParticles; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        radius: Math.random() * 2 + 1,
-        dx: (Math.random() - 0.5) * 1.2,
-        dy: (Math.random() - 0.5) * 1.2,
-      });
-    }
+    const NUM = 40;
+    const particles = Array.from({ length: NUM }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 1.5 + 0.5,
+      dx: (Math.random() - 0.5) * 0.9,
+      dy: (Math.random() - 0.5) * 0.9,
+    }));
 
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Set colors based on theme
-      const particleColor =
-        theme === "dark" ? "rgba(255,255,255,0.7)" : "rgba(0, 0, 0, 0.7)";
-      const lineColor =
-        theme === "dark" ? "rgba(255,255,255,0.5)" : "rgba(0,0,0,0.5)";
-
       particles.forEach((p) => {
         p.x += p.dx;
         p.y += p.dy;
-
         if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
         if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
 
-        // Draw particle
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = particleColor;
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = dotColor;
         ctx.fill();
-
-        // Draw connecting lines
-        particles.forEach((p2) => {
-          const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
-          if (dist < 120) {
-            ctx.beginPath();
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = lineColor;
-            ctx.stroke();
-          }
-        });
       });
 
-      requestAnimationFrame(draw);
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const d = Math.hypot(
+            particles[i].x - particles[j].x,
+            particles[i].y - particles[j].y,
+          );
+          if (d < 120) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = isDark
+              ? `rgba(94,170,247,${lineAlpha * (1 - d / 120)})`
+              : `rgba(9,105,218,${lineAlpha * (1 - d / 120)})`;
+            ctx.stroke();
+          }
+        }
+      }
+
+      animRef.current = requestAnimationFrame(draw);
     };
 
-    draw();
+    animRef.current = requestAnimationFrame(draw);
 
-    return () => window.removeEventListener("resize", resizeCanvas);
+    return () => {
+      cancelAnimationFrame(animRef.current);
+      window.removeEventListener("resize", resize);
+    };
   }, [theme]);
 
   return (
-    <section className="hero">
-      <canvas ref={canvasRef} className="hero-bg" />
+    <section className="hero" id="home">
+      <canvas ref={canvasRef} className="hero-canvas" />
 
-      <div className="hero-content-wrapper">
+      <div className="hero-inner">
+        {/* Left */}
         <div className="hero-left">
-          <p className="tag">Still in Progress</p>
+          <div className="hero-status">
+            <span className="hero-status-dot" />
+            Open to opportunities
+          </div>
 
-          <h1>
-            Hey, I'm <span>Aayush</span>
+          <h1 className="hero-h1">
+            Hey, I'm
+            <span className="hero-name">Aayush.</span>
           </h1>
 
-          <p className="description">
-            I am a passionate <strong>Web & Game Developer</strong> creating
-            interactive, user-friendly, and visually appealing digital
-            experiences. I specialize in modern technologies like{" "}
-            <strong>React.js, JavaScript, HTML, CSS</strong>, and{" "}
-            <strong>C#</strong>. <br />I enjoy solving problems, learning new
-            tech, and turning ideas into functional applications.
+          <p className="hero-role">
+            Web &amp; <em>Game Developer</em>
           </p>
 
-          <div className="buttons">
-            <a href="#projects" className="primary">
-              View My Work
+          <p className="hero-desc">
+            I build <strong>interactive web apps</strong> and{" "}
+            <strong>games</strong> with React, JavaScript, C#, and Unity. I
+            enjoy solving problems and turning ideas into things people can
+            actually use.
+          </p>
+
+          <div className="hero-buttons">
+            <a href="#projects" className="hero-btn-primary">
+              View My Work →
             </a>
             <a
               href="/pdf/Aayush_Shrestha_CV.pdf"
               download="Aayush-Shrestha-CV.pdf"
-              className="secondary"
+              className="hero-btn-secondary"
             >
               Download CV
             </a>
           </div>
         </div>
 
+        {/* Right: photo */}
         <div className="hero-right">
-          <div className="hero-image-container">
-            <img src={heroImage} alt="Hero" className="hero-about-image" />
+          <div className="hero-photo-frame">
+            <div className="hero-photo-ring hero-photo-ring--outer" />
+            <div className="hero-photo-ring hero-photo-ring--inner" />
+            <div className="hero-photo-morph">
+              <img
+                src={heroImage}
+                alt="Aayush Shrestha"
+                className="hero-photo-img"
+              />
+            </div>
           </div>
         </div>
       </div>
