@@ -71,6 +71,17 @@ import cinemaTracker10 from "../asset/images/CinemaTracker/CinemaTracker_Favorit
 import cinemaTracker11 from "../asset/images/CinemaTracker/CinemaTracker_WatchList.png";
 import cinemaTracker12 from "../asset/images/CinemaTracker/CinemaTracker_Footer.png";
 
+import mssquiz1 from "../asset/images/MSSQuiz/MSSQuiz_GamePlayHome.png";
+import mssquiz2 from "../asset/images/MSSQuiz/MSSQuiz_QuizSelect.png";
+import mssquiz3 from "../asset/images/MSSQuiz/MSSQuiz_StartScreen.png";
+import mssquiz4 from "../asset/images/MSSQuiz/MSSQuiz_QuestionOption.png";
+import mssquiz5 from "../asset/images/MSSQuiz/MSSQuiz_Dashboard.png";
+import mssquiz6 from "../asset/images/MSSQuiz/MSSQuiz_QuestionCreate.png";
+import mssquiz7 from "../asset/images/MSSQuiz/MSSQuiz_QuestionList.png";
+import mssquiz8 from "../asset/images/MSSQuiz/MSSQuiz_QuizCreate.png";
+import mssquiz9 from "../asset/images/MSSQuiz/MSSQuiz_QuizRoundCreate.png";
+import mssquiz10 from "../asset/images/MSSQuiz/MSSQuiz_QuizHistory.png";
+
 import "../styles/Projects.css";
 
 import sampleImg from "../asset/gifs/bggg.gif";
@@ -184,9 +195,21 @@ export const allProjects = [
   },
 
   {
-    name: "Lets Quiz",
-    desc: "Lets Quiz is a complete quiz-management platform where admins can create quizzes, rounds, questions, and teams, while assigned Quiz Masters can host the game in real time. The system supports multiple round types including General (MCQ), Subjective (category-based), Rapid Fire (timed question streaks), Estimation (teams provide numerical estimates), and Buzzer (fastest buzz gets to answer). It also provides detailed quiz history, team performance tracking, and admin-level monitoring for smooth event execution.",
-    img: [sampleImg],
+    name: "MSSQuiz",
+    desc: "Use Email: 'admintest123@example.com', password: 'test12345' to login as admin and create quiz and test the game as quiz master MSSQuiz is a complete quiz-management platform where admins can create quizzes, rounds, questions, and teams, while assigned Quiz Masters can host the game in real time. The system supports multiple round types including General (MCQ), Subjective (category-based), Rapid Fire (timed question streaks), Estimation (teams provide numerical estimates), and Buzzer (fastest buzz gets to answer). It also provides detailed quiz history, team performance tracking, and admin-level monitoring for smooth event execution. .",
+    img: [
+      mssquiz1,
+      mssquiz2,
+      mssquiz3,
+      mssquiz4,
+      mssquiz5,
+      mssquiz6,
+      mssquiz7,
+      mssquiz8,
+      mssquiz9,
+      mssquiz10,
+    ],
+    link: "https://mssquizapp.vercel.app/",
     tags: ["HTML", "CSS", "React.js", "Node.js", "MongoDB"],
     type: "web",
   },

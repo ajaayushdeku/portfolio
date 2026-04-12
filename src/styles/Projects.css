@@ -1,7 +1,6 @@
 /* ================== Projects.css ================== */
 
 .project-section {
-  padding: 5rem 20px 4rem;
   width: 100%;
 }
 
@@ -158,7 +157,7 @@
 }
 
 .project-img-container img.active {
-  opacity: 0.75;
+  opacity: 0.9;
   z-index: 2;
 }
 
@@ -334,7 +333,8 @@
   border-radius: 8px;
   font-family: "DM Sans", sans-serif;
   font-size: 0.78rem;
-  font-weight: 600;
+  font-weight: 500;
+  letter-spacing: 0.5px;
   cursor: pointer;
   transition:
     background 0.2s ease,
