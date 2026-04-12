@@ -84,7 +84,7 @@ import mssquiz10 from "../asset/images/MSSQuiz/MSSQuiz_QuizHistory.png";
 
 import "../styles/Projects.css";
 
-import sampleImg from "../asset/gifs/bggg.gif";
+// import sampleImg from "../asset/gifs/bggg.gif";
 
 export const allProjects = [
   {
